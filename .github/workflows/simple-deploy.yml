@@ -1,0 +1,52 @@
+name: Simple GitHub Pages Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Verify files
+        run: |
+          echo "Checking for required files..."
+          if [ ! -f "index.html" ]; then
+            echo "❌ Error: index.html not found!"
+            ls -la
+            exit 1
+          fi
+          echo "✅ index.html found"
+          
+          if [ -d "project" ]; then
+            echo "✅ project directory found"
+            echo "Project files:"
+            ls -la project/
+          else
+            echo "⚠️ Warning: project directory not found"
+          fi
+        
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
