@@ -1,0 +1,44 @@
+# GitHub Pages Configuration for Portfolio
+title: Shubham Kulkarni - Jr. Software Developer Portfolio
+description: Showcasing daily training projects in HTML5, CSS3, JavaScript, and modern web development at Manasvi Tech Solutions
+author: Shubham Kulkarni
+email: shubhamkulkarni377@gmail.com
+url: https://kulkarnishub377.github.io
+baseurl: /sk
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# SEO settings
+lang: en
+twitter:
+  username: 
+facebook:
+  username: 
+github_username: kulkarnishub377
+linkedin_username: 
+
+# Google Analytics (optional)
+google_analytics: 
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
