@@ -7,69 +7,134 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f8f9fa;
-            padding-top: 80px; /* Add padding for the fixed nav */
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --light-gray: #f8f9fa;
+            --dark-blue: #0a58ca;
+            --card-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            --card-hover-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-gray);
+            color: #333;
+            padding-top: 90px; /* Adjust padding for the fixed nav */
+        }
+
+        h1, h2, h3, h4, h5, h6, .card-header {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
         .home-nav {
             position: fixed;
             top: 20px;
             right: 20px;
-            z-index: 1000;
-            background: #007bff;
-            color: white;
+            z-index: 1030;
+            background: white;
+            color: var(--primary-color);
             padding: 10px 20px;
-            border-radius: 25px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .home-nav:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(13, 110, 253, 0.4);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            overflow: hidden; /* Ensures child elements respect border-radius */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-blue));
+            color: white;
+            font-size: 1.25rem;
+            padding: 1rem 1.5rem;
+            border-bottom: 0;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(13, 110, 253, 0.05);
+            cursor: pointer;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+
+        .btn {
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 500;
             transition: all 0.3s ease;
         }
-        .home-nav:hover {
-            background: #0056b3;
-            color: white;
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 86, 179, 0.4);
         }
-        .card {
-            margin-bottom: 1.5rem;
+
+        .btn-secondary:hover, .btn-success:hover {
+             transform: translateY(-2px);
         }
-        .card-header {
-            background-color: #007bff;
-            color: white;
-            font-weight: bold;
-        }
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            margin-bottom: 1rem;
+
+        header.text-center h1 {
+            color: #2c3e50;
         }
     </style>
 </head>
 <body>
     <!-- Home Navigation Link -->
     <a href="../index.html" class="home-nav">
-        🏠 Back to Work Portfolio
+        🏠 Back to Portfolio
     </a>
     
     <div class="container mt-4">
         <header class="text-center mb-5">
             <h1>Day 2 Training</h1>
-            <p class="lead">A demonstration of HTML lists, tables, and forms with Bootstrap styling.</p>
+            <p class="lead text-muted">A demonstration of HTML lists, tables, and forms with Bootstrap styling.</p>
         </header>
 
         <!-- Topics Card -->
         <div class="card">
             <div class="card-header">Today's Topics</div>
-            <div class="card-body">
+            <div class="card-body p-4">
                 <ol class="list-group list-group-numbered">
                     <li class="list-group-item">Lists</li>
                     <li class="list-group-item">Tables</li>
                     <li class="list-group-item">All Types of Forms</li>
                 </ol>
-                <dl class="mt-3">
+                <dl class="mt-4">
                     <dt>Shubham</dt>
                     <dd>From the Nagar</dd>
                 </dl>
@@ -80,7 +145,7 @@
         <div class="card">
             <div class="card-header">Data Table</div>
             <div class="card-body table-responsive">
-                <table class="table table-striped table-bordered table-hover">
+                <table class="table table-striped table-bordered table-hover align-middle">
                     <thead class="table-dark">
                         <tr>
                             <th>Sr.No</th>
@@ -150,19 +215,19 @@
         <!-- Registration Form Card -->
         <div class="card">
             <div class="card-header">Registration Form</div>
-            <div class="card-body">
+            <div class="card-body p-4">
                 <form>
                     <div class="mb-3">
                         <label for="fullname" class="form-label">Full Name:</label>
-                        <input type="text" class="form-control" id="fullname" name="fullname" required>
+                        <input type="text" class="form-control" id="fullname" name="fullname" required placeholder="Enter your full name">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Create a strong password">
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -170,25 +235,25 @@
                             <input type="date" class="form-control" id="dob" name="dob">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="time" class="form-label">Time:</label>
+                            <label for="time" class="form-label">Preferred Time:</label>
                             <input type="time" class="form-control" id="time" name="time">
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="age" class="form-label">Age:</label>
-                        <input type="number" class="form-control" id="age" name="age">
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Your age">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Gender:</label>
-                        <div class="form-check">
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" id="male" name="gender" value="male">
                             <label class="form-check-label" for="male">Male</label>
                         </div>
-                        <div class="form-check">
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" id="female" name="gender" value="female">
                             <label class="form-check-label" for="female">Female</label>
                         </div>
-                        <div class="form-check">
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" id="other" name="gender" value="other">
                             <label class="form-check-label" for="other">Other</label>
                         </div>
@@ -196,7 +261,7 @@
                     <div class="mb-3">
                         <label for="city" class="form-label">City:</label>
                         <select class="form-select" id="city" name="city">
-                            <option value="">Select</option>
+                            <option selected disabled value="">Choose your city...</option>
                             <option value="nagar">Nagar</option>
                             <option value="pune">Pune</option>
                             <option value="shrirampur">Shrirampur</option>
@@ -204,7 +269,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Address:</label>
-                        <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+                        <textarea class="form-control" id="address" name="address" rows="3" placeholder="1234 Main St"></textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Subject Select:</label>
@@ -227,36 +292,38 @@
                     </div>
                     <div class="mb-3">
                         <label for="color" class="form-label">Favorite Color:</label>
-                        <input type="color" class="form-control form-control-color" id="color" name="color" value="#007bff">
+                        <input type="color" class="form-control form-control-color" id="color" name="color" value="#0d6efd" title="Choose your favorite color">
                     </div>
                     <div class="mb-3">
                         <label for="website" class="form-label">Website:</label>
-                        <input type="url" class="form-control" id="website" name="website">
+                        <input type="url" class="form-control" id="website" name="website" placeholder="https://example.com">
                     </div>
                     <div class="mb-3">
                         <label for="range" class="form-label">Satisfaction Level:</label>
                         <input type="range" class="form-range" id="range" name="range" min="0" max="10">
                     </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
                 </form>
             </div>
         </div>
 
         <!-- Login Form Card -->
-        <div class="card">
+        <div class="card mb-5">
             <div class="card-header">Login Form</div>
-            <div class="card-body">
+            <div class="card-body p-4">
                 <form>
                     <div class="mb-3">
                         <label for="login-email" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="login-email" name="login-email" required>
+                        <input type="email" class="form-control" id="login-email" name="login-email" required placeholder="Enter your email">
                     </div>
                     <div class="mb-3">
                         <label for="login-password" class="form-label">Password:</label>
-                        <input type="password" class="form-control" id="login-password" name="login-password" required>
+                        <input type="password" class="form-control" id="login-password" name="login-password" required placeholder="Enter your password">
                     </div>
-                    <button type="submit" class="btn btn-success">Login</button>
+                    <button type="submit" class="btn btn-success w-100">Login</button>
                 </form>
             </div>
         </div>
