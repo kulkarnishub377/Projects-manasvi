@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 Training - Modern Redesign</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Day 2 Training</h1>
+    </header>
+    <div class="container">
+        <div class="box">
+            <div>
+                <h2>Welcome</h2>
+                <p>This is today's HTML topics and data.</p>
+            </div>
+        </div>
+
+        <h4>Today's Topics</h4>
+        <ol>
+            <li>Lists</li>
+            <li>Tables</li>
+            <li>All Types of Forms</li>
+        </ol>
+
+        <dl>
+            <dt>Shubham</dt>
+            <dd>From the Nagar</dd>
+        </dl>
+
+        <table class="data-table">
+            <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Shubham Kulkarni</td>
+                <td>22</td>
+                <td>Nagar</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Dhiraj</td>
+                <td>23</td>
+                <td>Shrirampur</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sharma</td>
+                <td>21</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Rahul</td>
+                <td>24</td>
+                <td>Mumbai</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Kale</td>
+                <td>22</td>
+                <td>Delhi</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Arjun</td>
+                <td>23</td>
+                <td>Ahmedabad</td>
+            </tr>
+            <tr>
+                <td rowspan="3">7</td>
+                <td>Shriram</td>
+                <td>20</td>
+                <td>Kolkata</td>
+            </tr>
+            <tr>
+                <td>Vikas</td>
+                <td>25</td>
+                <td>Chennai</td>
+            </tr>
+            <tr>
+                <td>Anjali</td>
+                <td>22</td>
+                <td>Bangalore</td>
+            </tr>
+        </table>
+
+        <h4>Registration Form</h4>
+        <form class="registration-form">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age">
+
+            <label>Gender:</label>
+            <span>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+            </span>
+
+            <label for="city">City:</label>
+            <select id="city" name="city">
+                <option value="">Select</option>
+                <option value="nagar">Nagar</option>
+                <option value="pune">Pune</option>
+                <option value="shrirampur">Shrirampur</option>
+            </select>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address"></textarea>
+
+            <label>Subject Select:</label>
+            <span>
+                <input type="checkbox" id="math" name="subject" value="math">
+                <label for="math">Math</label>
+                <input type="checkbox" id="science" name="subject" value="science">
+                <label for="science">Science</label>
+                <input type="checkbox" id="hindi" name="subject" value="hindi">
+                <label for="hindi">Hindi</label>
+            </span>
+
+            <label for="profilepic">Profile Picture:</label>
+            <input type="file" id="profilepic" name="profilepic">
+
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color">
+
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website">
+
+            <label for="range">Satisfaction Level:</label>
+            <input type="range" id="range" name="range" min="0" max="10">
+
+            <input type="submit" value="Register">
+            <input type="reset" value="Reset">
+        </form>
+
+        <h3>Login Form</h3>
+        <form class="login-form">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="login-email" required>
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="login-password" required>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

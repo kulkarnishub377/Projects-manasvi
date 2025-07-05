@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML & CSS Showcase</title>
+    <style>
+        /* 1. CSS Variables and General Styles */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg-color: #ffffff;
+            --border-color: #dee2e6;
+            --header-bg-color: #343a40;
+            --header-text-color: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth; /* For smooth scrolling when nav links are clicked */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--header-bg-color);
+            color: var(--header-text-color);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        main {
+            padding: 1rem 2rem;
+        }
+
+        section {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        /* 2. Navigation Bar */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: var(--header-bg-color);
+        }
+
+        nav li a {
+            display: block;
+            color: var(--header-text-color);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover */
+        }
+
+        /* 3. Pseudo-classes (:hover, :focus) */
+        nav li a:hover, nav li a:focus {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 4. Positioning (relative, absolute, fixed, sticky) and z-index */
+        .position-container {
+            position: relative; /* Establishes a positioning context for children */
+            height: 200px;
+            border: 2px dashed var(--secondary-color);
+            padding: 10px;
+        }
+
+        .pos-box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .absolute {
+            position: absolute;
+            background-color: #dc3545;
+            top: 20px;
+            left: 20px;
+            z-index: 2; /* Higher z-index, appears on top */
+        }
+
+        .relative {
+            position: relative; /* Positioned relative to its normal position */
+            background-color: #28a745;
+            top: 40px;
+            left: 40px;
+            z-index: 1; /* Lower z-index, appears below */
+        }
+        
+        .fixed {
+            position: fixed; /* Positioned relative to the viewport */
+            background-color: var(--primary-color);
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001; /* Above everything else */
+            border-radius: 5px;
+        }
+
+        /* 5. Display Property (block, inline, inline-block, flex) */
+        .display-examples span {
+            padding: 5px;
+            margin: 5px;
+            border-radius: 3px;
+        }
+        .d-inline { display: inline; background-color: #ffc107; } /* Respects text flow */
+        .d-block { display: block; background-color: #17a2b8; color: white; } /* Takes full width */
+        .d-inline-block { display: inline-block; background-color: #6f42c1; color: white; width: 150px; } /* Like inline, but with width/height */
+
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .flex-container > div {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* 6. CSS Animation and Transitions */
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .animated-heading {
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .transition-box {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            transition: transform 0.4s ease-in-out, background-color 0.4s;
+        }
+
+        .transition-box:hover {
+            background-color: #0056b3;
+            transform: scale(1.1) rotate(5deg); /* Grow and rotate on hover */
+        }
+
+        /* 7. Overflow */
+        .overflow-box {
+            height: 100px;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            overflow: auto; /* Adds scrollbars only when needed */
+        }
+
+        /* 8. Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Stack nav items vertically */
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .flex-container {
+                flex-direction: column;
+                gap: 10px; /* Add space between stacked flex items */
+            }
+        }
+
+        /* 9. Complex Keyframe Animation */
+        .complex-animation-container {
+            position: relative;
+            height: 250px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .morphing-box {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0% { /* Start: Top-left, Blue Square */
+                top: 10px;
+                left: 10px;
+                background-color: #007bff;
+                border-radius: 0%;
+                transform: rotate(0deg);
+            }
+            25% { /* Move to Top-right, Green Circle */
+                top: 10px;
+                left: calc(100% - 90px);
+                background-color: #28a745;
+                border-radius: 50%;
+                transform: rotate(90deg);
+            }
+            50% { /* Move to Bottom-right, Red Square */
+                top: calc(100% - 90px);
+                left: calc(100% - 90px);
+                background-color: #dc3545;
+                border-radius: 0%;
+                transform: rotate(180deg);
+            }
+            75% { /* Move to Bottom-left, Yellow Circle */
+                top: calc(100% - 90px);
+                left: 10px;
+                background-color: #ffc107;
+                border-radius: 50%;
+                transform: rotate(270deg);
+            }
+            100% { /* Return to Start */
+                top: 10px;
+                left: 10px;
+                background-color: #007bff;
+                border-radius: 0%;
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="animated-heading">HTML & CSS Showcase</h1>
+        <nav>
+            <ul>
+                <li><a href="#positioning">Positioning</a></li>
+                <li><a href="#display">Display</a></li>
+                <li><a href="#animations">Animations</a></li>
+                <li><a href="#overflow">Overflow</a></li>
+                <li><a href="#responsive">Responsive</a></li>
+                <li><a href="#complex-animation">Complex Animation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="positioning">
+            <h2>4. CSS Positioning & Z-Index</h2>
+            <p>Control the layout and stacking order of elements.</p>
+            <div class="position-container">
+                <div class="pos-box absolute">Absolute (z-index: 2)</div>
+                <div class="pos-box relative">Relative (z-index: 1)</div>
+            </div>
+            <div class="pos-box fixed">Fixed Box</div>
+        </section>
+
+        <section id="display">
+            <h2>5. Display Property</h2>
+            <p>Determines how an element is rendered in the document.</p>
+            <div class="display-examples">
+                <p>This paragraph contains <span class="d-inline">an inline span</span>, which flows with the text.</p>
+                <p>This is a <span class="d-block">span with display: block</span>, so it creates its own line.</p>
+                <p>This is an <span class="d-inline-block">inline-block span</span> and another <span class="d-inline-block">inline-block span</span>. They sit side-by-side but have a set width.</p>
+            </div>
+            <h3>Flexbox Example</h3>
+            <div class="flex-container">
+                <div>Flex Item 1</div>
+                <div>Flex Item 2</div>
+                <div>Flex Item 3</div>
+            </div>
+        </section>
+
+        <section id="animations">
+            <h2>6. CSS Animations & Transitions</h2>
+            <p>Bring your page to life with movement.</p>
+            <h3>Transition on Hover</h3>
+            <div class="transition-box">Hover over me!</div>
+            <p>The main "HTML & CSS Showcase" heading has a slide-in animation.</p>
+        </section>
+
+        <section id="overflow">
+            <h2>7. Overflow</h2>
+            <p>Manage content that doesn't fit within its container.</p>
+            <div class="overflow-box">
+                This box has a fixed height. If the content inside is too long to fit, a scrollbar will appear. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+            </div>
+        </section>
+
+        <section id="responsive">
+            <h2>8. Media Queries</h2>
+            <p>Adapt your layout for different screen sizes. Resize your browser window to see the changes.</p>
+            <p>On screens smaller than 768px wide, the navigation bar and the flexbox items will stack vertically.</p>
+        </section>
+
+        <section id="complex-animation">
+            <h2>9. Complex Keyframe Animation</h2>
+            <p>This box uses <code>@keyframes</code> to continuously change its position, color, and shape every 2 seconds.</p>
+            <div class="complex-animation-container">
+                <div class="morphing-box"></div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

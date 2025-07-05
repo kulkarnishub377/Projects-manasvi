@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shubham Kulkarni - Jr. Software Developer Portfolio. Showcasing daily training projects in HTML5, CSS3, JavaScript, and modern web development at Manasvi Tech Solutions.">
+    <meta name="keywords" content="Shubham Kulkarni, Jr. Software Developer, Web Development, HTML5, CSS3, JavaScript, Portfolio, Manasvi Tech Solutions">
+    <title>Shubham Kulkarni - Jr. Software Developer Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #7c3aed;
+            --accent-color: #06b6d4;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --dark-color: #1f2937;
+            --light-color: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --border-radius: 1rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+            background-attachment: fixed;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            font-weight: 400;
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.85) !important;
+            border-bottom: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--gray-800) !important;
+            position: relative;
+            transition: var(--transition);
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.25rem;
+            border-radius: 0.5rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            background: var(--gray-50);
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--light-color) !important;
+            background: var(--gradient-primary);
+        }
+
+        /* Hero Section Enhancement */
+        .hero-section {
+            background: var(--gradient-light);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 6rem;
+            margin-bottom: 0;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.1) 75%), 
+                        linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.1) 75%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.025em;
+        }
+
+        .hero-section .lead {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 2.5rem;
+            margin-top: 4rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Enhanced Cards */
+        .card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            height: 100%;
+            background: var(--gradient-card);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .card-body {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .card-title i {
+            margin-right: 0.75rem;
+            font-size: 1.5em;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-text {
+            color: var(--gray-600);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Section Enhancements */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 4rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.025em;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        /* Project Cards Special Effects */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        /* Skills Progress Bars */
+        .skill-progress {
+            background: var(--gray-200);
+            border-radius: 1rem;
+            height: 12px;
+            margin-top: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 1rem;
+            transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.3) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.3) 75%);
+            background-size: 10px 10px;
+            animation: progress-animation 2s linear infinite;
+        }
+
+        @keyframes progress-animation {
+            0% { background-position: 0 0; }
+            100% { background-position: 10px 0; }
+        }
+
+        .skill-html { width: 90%; }
+        .skill-css { width: 85%; }
+        .skill-bootstrap { width: 80%; }
+        .skill-responsive { width: 88%; }
+
+        /* Timeline Enhancement */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+            z-index: 2;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 2rem;
+            width: 2px;
+            height: calc(100% + 1.5rem);
+            background: linear-gradient(to bottom, var(--primary-color), var(--gray-300));
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        /* Button Enhancements */
+        .btn {
+            border-radius: 0.75rem;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: none;
+            letter-spacing: 0.025em;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+            color: white;
+        }
+
+        /* Footer Enhancement */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 6rem 0 4rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section .lead {
+                font-size: 1.25rem;
+            }
+            
+            .section-title {
+                font-size: 2.25rem;
+            }
+            
+            .card-body {
+                padding: 1.5rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+
+            .hero-stats {
+                padding: 2rem;
+                margin-top: 3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.875rem;
+            }
+
+            .card-body {
+                padding: 1.25rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Elements */
+        .float-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Interactive Elements */
+        .interactive-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-code-slash"></i> Shubham Kulkarni</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#journey">Journey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="about" class="hero-section text-center text-white">
+        <div class="container hero-content">
+            <div class="float-element">
+                <h1 class="display-4 mb-4">Shubham Kulkarni</h1>
+                <p class="lead mb-4">Jr. Software Developer at Manasvi Tech Solutions</p>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="mb-4">Hello! I'm Shubham Kulkarni, a passionate and dedicated Jr. Software Developer currently undergoing intensive training at Manasvi Tech Solutions. With a strong foundation in web development technologies, I'm committed to mastering modern development practices and building innovative, user-friendly applications.</p>
+                    <p class="mb-4">This portfolio showcases my daily training journey, featuring hands-on projects that demonstrate my progressive learning in HTML5, CSS3, JavaScript, and responsive design principles. Each project represents a milestone in my development career, highlighting my growth from basic HTML concepts to advanced interactive web applications.</p>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <i class="bi bi-geo-alt fs-4 mb-2 d-block"></i>
+                        <strong>Location:</strong><br>Nashik, Maharashtra
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <i class="bi bi-calendar3 fs-4 mb-2 d-block"></i>
+                        <strong>Training Started:</strong><br>July 2024
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <i class="bi bi-code-square fs-4 mb-2 d-block"></i>
+                        <strong>Focus:</strong><br>Full-Stack Development
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="skills" class="fade-in">
+            <h2 class="text-center section-title">Skills & Technologies</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="bi bi-filetype-html"></i>HTML5</h5>
+                            <p class="card-text">Semantic markup, forms, tables, multimedia, and accessibility best practices.</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar skill-html"></div>
+                            </div>
+                            <small class="text-muted">90% Proficiency</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="bi bi-filetype-css"></i>CSS3</h5>
+                            <p class="card-text">Flexbox, Grid, animations, transitions, responsive design, and CSS variables.</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar skill-css"></div>
+                            </div>
+                            <small class="text-muted">85% Proficiency</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="bi bi-bootstrap"></i>Bootstrap</h5>
+                            <p class="card-text">Component-based design, grid system, utilities, and responsive frameworks.</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar skill-bootstrap"></div>
+                            </div>
+                            <small class="text-muted">80% Proficiency</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="bi bi-phone"></i>Responsive Design</h5>
+                            <p class="card-text">Mobile-first approach, media queries, flexible layouts, and cross-browser compatibility.</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar skill-responsive"></div>
+                            </div>
+                            <small class="text-muted">88% Proficiency</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="fade-in">
+            <h2 class="text-center section-title">Daily Training Projects</h2>
+            <div class="row g-4">
+                <!-- Portfolio Project -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card interactive-bg">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><i class="bi bi-person-workspace"></i> My Portfolio</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Professional Developer Portfolio</h6>
+                            <p class="card-text">Modern, responsive portfolio website showcasing my development journey, skills, and projects. Features advanced CSS animations, interactive elements, and professional design.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> HTML5, Advanced CSS3, Bootstrap 5, JavaScript</small></p>
+                            <a href="https://kulkarnishub377.github.io/sk/" target="_blank" rel="noopener" class="btn btn-primary mt-auto">
+                                <i class="bi bi-globe"></i> View Live Portfolio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 1 Project -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><i class="bi bi-calendar-event"></i> Day 1 (01/07/2024)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">HTML Fundamentals & Text Formatting</h6>
+                            <p class="card-text">Mastered HTML basics including semantic headings, text formatting (bold, italic, mark), links, and iframe implementation with modern styling approaches.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> HTML5, Basic CSS, Text Formatting</small></p>
+                            <a href="project/day1_01_07.html" target="_blank" class="btn btn-primary mt-auto">View Project <i class="bi bi-arrow-right-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 Project -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><i class="bi bi-calendar-event"></i> Day 2 (02/07/2024)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Lists, Tables & Form Elements</h6>
+                            <p class="card-text">Advanced HTML structures including ordered/unordered lists, definition lists, data tables, and comprehensive form creation with various input types.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> HTML5 Forms, Tables, CSS Styling</small></p>
+                            <a href="project/day2_02_07.html" target="_blank" class="btn btn-primary mt-auto">View Project <i class="bi bi-arrow-right-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 Project -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><i class="bi bi-calendar-event"></i> Day 3 (03/07/2024)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">CSS Box Model & Flexbox Basics</h6>
+                            <p class="card-text">Introduction to CSS fundamentals, box model concepts, flexbox layout system, and responsive container design with flex properties.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> CSS3, Flexbox, Box Model</small></p>
+                            <a href="project/day3_03_07.html" target="_blank" class="btn btn-primary mt-auto">View Project <i class="bi bi-arrow-right-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4 Project -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><i class="bi bi-calendar-event"></i> Day 4 (04/07/2024)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Advanced CSS & Modern Features</h6>
+                            <p class="card-text">Explored CSS variables, positioning techniques, z-index layering, smooth animations, transitions, and responsive media queries.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> CSS Variables, Animations, Media Queries</small></p>
+                            <a href="project/day4_04_07.html" target="_blank" class="btn btn-primary mt-auto">View Project <i class="bi bi-arrow-right-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 5 Project -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><i class="bi bi-calendar-event"></i> Day 5 (05/07/2024)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Bootstrap 5 Component Showcase</h6>
+                            <p class="card-text">Comprehensive Bootstrap 5 demonstration featuring navigation, alerts, accordion, forms, modals, carousel, and responsive design patterns in a travel website theme.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Bootstrap 5, Responsive UI, Component Library</small></p>
+                            <a href="project/day5_05_07.html" target="_blank" class="btn btn-primary mt-auto">View Project <i class="bi bi-arrow-right-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flexbox Advanced Project -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><i class="bi bi-box-seam"></i> Advanced Project</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Interactive Flexbox Playground</h6>
+                            <p class="card-text">Comprehensive flexbox demonstration with live controls, dynamic property manipulation, and real-time visual feedback. Features interactive learning tools.</p>
+                            <p class="card-text"><small class="text-muted"><strong>Technologies:</strong> Advanced Flexbox, JavaScript ES6+, Interactive UI</small></p>
+                            <a href="project/Flexbox.html" target="_blank" class="btn btn-primary mt-auto">View Project <i class="bi bi-arrow-right-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Journey Section -->
+        <section id="journey" class="fade-in">
+            <h2 class="text-center section-title">My Learning Journey</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4"><i class="bi bi-graph-up-arrow"></i> Daily Training Progress</h5>
+                            <p class="text-center text-muted mb-5">A comprehensive day-by-day breakdown of my web development training at Manasvi Tech Solutions</p>
+                            
+                            <!-- Daily Timeline -->
+                            <div class="timeline-item">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6><i class="bi bi-calendar-event text-success"></i> Day 1 - July 1, 2024</h6>
+                                    <span class="badge bg-success">Completed</span>
+                                </div>
+                                <h6 class="fw-bold text-primary">HTML Fundamentals & Text Formatting</h6>
+                                <p class="text-muted mb-2">Started my web development journey with HTML basics, learning semantic markup and text formatting techniques.</p>
+                                <ul class="list-unstyled ms-3 mb-0">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> HTML5 Document Structure</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Semantic Headings (h1-h6)</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Text Formatting (bold, italic, mark)</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Links and Navigation</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> iframe Implementation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6><i class="bi bi-calendar-event text-success"></i> Day 2 - July 2, 2024</h6>
+                                    <span class="badge bg-success">Completed</span>
+                                </div>
+                                <h6 class="fw-bold text-primary">Lists, Tables & Advanced Forms</h6>
+                                <p class="text-muted mb-2">Advanced HTML structures including complex data organization and user input forms.</p>
+                                <ul class="list-unstyled ms-3 mb-0">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Ordered & Unordered Lists</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Definition Lists</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Data Tables with Headers</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Form Elements & Input Types</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Form Validation Basics</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6><i class="bi bi-calendar-event text-success"></i> Day 3 - July 3, 2024</h6>
+                                    <span class="badge bg-success">Completed</span>
+                                </div>
+                                <h6 class="fw-bold text-primary">CSS Fundamentals & Box Model</h6>
+                                <p class="text-muted mb-2">Introduction to CSS styling, box model concepts, and basic flexbox layout principles.</p>
+                                <ul class="list-unstyled ms-3 mb-0">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> CSS Selectors & Properties</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Box Model (margin, padding, border)</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Display Properties</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Flexbox Basics</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Responsive Container Design</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6><i class="bi bi-calendar-event text-success"></i> Day 4 - July 4, 2024</h6>
+                                    <span class="badge bg-success">Completed</span>
+                                </div>
+                                <h6 class="fw-bold text-primary">Advanced CSS & Modern Features</h6>
+                                <p class="text-muted mb-2">Explored advanced CSS concepts including variables, positioning, animations, and responsive design.</p>
+                                <ul class="list-unstyled ms-3 mb-0">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> CSS Variables (Custom Properties)</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Positioning Techniques</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Z-index Layering</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> CSS Animations & Transitions</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Media Queries for Responsive Design</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6><i class="bi bi-calendar-event text-success"></i> Day 5 - July 5, 2024</h6>
+                                    <span class="badge bg-success">Completed</span>
+                                </div>
+                                <h6 class="fw-bold text-primary">Bootstrap 5 Framework Mastery</h6>
+                                <p class="text-muted mb-2">Comprehensive Bootstrap 5 implementation featuring navigation, components, and responsive layouts.</p>
+                                <ul class="list-unstyled ms-3 mb-0">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Bootstrap Grid System</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Navigation & Navbar Components</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Cards, Alerts & Accordion</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Modal Windows & Carousel</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Responsive UI Components</li>
+                                </ul>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6><i class="bi bi-calendar-event text-info"></i> Advanced Project</h6>
+                                    <span class="badge bg-info">In Progress</span>
+                                </div>
+                                <h6 class="fw-bold text-primary">Interactive Flexbox Playground</h6>
+                                <p class="text-muted mb-2">Advanced project combining all learned concepts into an interactive learning tool with JavaScript integration.</p>
+                                <ul class="list-unstyled ms-3 mb-0">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Advanced Flexbox Properties</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> JavaScript ES6+ Integration</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Interactive Controls</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Real-time Visual Feedback</li>
+                                    <li><i class="bi bi-hourglass-split text-warning me-2"></i> Enhanced User Experience</li>
+                                </ul>
+                            </div>
+
+                            <hr class="my-4">
+                            
+                            <!-- Skills Summary -->
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="card bg-light border-0">
+                                        <div class="card-body">
+                                            <h6><i class="bi bi-check-circle-fill text-success"></i> Skills Mastered</h6>
+                                            <ul class="list-unstyled ms-3 mb-0">
+                                                <li><i class="bi bi-chevron-right text-primary me-2"></i> HTML5 Semantic Elements</li>
+                                                <li><i class="bi bi-chevron-right text-primary me-2"></i> CSS3 Styling & Animations</li>
+                                                <li><i class="bi bi-chevron-right text-primary me-2"></i> Flexbox Layout System</li>
+                                                <li><i class="bi bi-chevron-right text-primary me-2"></i> Responsive Design Principles</li>
+                                                <li><i class="bi bi-chevron-right text-primary me-2"></i> Bootstrap 5 Framework</li>
+                                                <li><i class="bi bi-chevron-right text-primary me-2"></i> Form Design & Validation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card bg-warning bg-opacity-10 border-0">
+                                        <div class="card-body">
+                                            <h6><i class="bi bi-hourglass-split text-warning"></i> Currently Learning</h6>
+                                            <ul class="list-unstyled ms-3 mb-0">
+                                                <li><i class="bi bi-chevron-right text-warning me-2"></i> Advanced JavaScript ES6+</li>
+                                                <li><i class="bi bi-chevron-right text-warning me-2"></i> DOM Manipulation</li>
+                                                <li><i class="bi bi-chevron-right text-warning me-2"></i> Event Handling</li>
+                                                <li><i class="bi bi-chevron-right text-warning me-2"></i> API Integration</li>
+                                                <li><i class="bi bi-chevron-right text-warning me-2"></i> Version Control (Git)</li>
+                                                <li><i class="bi bi-chevron-right text-warning me-2"></i> Modern Development Workflow</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <div class="card bg-primary bg-opacity-10 border-0">
+                                    <div class="card-body">
+                                        <h6><i class="bi bi-target text-primary"></i> Upcoming Learning Goals</h6>
+                                        <p class="text-muted mb-0">React.js Development • Node.js Backend • PHP Development • Database Management • Full-Stack Applications • Cloud Deployment</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in">
+            <h2 class="text-center section-title">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card interactive-bg">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-4"><i class="bi bi-person-lines-fill"></i> Contact Information</h5>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-envelope-fill text-primary me-3 fs-4"></i>
+                                        <div class="text-start">
+                                            <strong>Email</strong><br>
+                                            <a href="mailto:shubhamkulkarni377@gmail.com" class="text-decoration-none">shubhamkulkarni377@gmail.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-github text-dark me-3 fs-4"></i>
+                                        <div class="text-start">
+                                            <strong>GitHub</strong><br>
+                                            <a href="https://github.com/kulkarnishub377" target="_blank" rel="noopener" class="text-decoration-none">kulkarnishub377</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-linkedin text-primary me-3 fs-4"></i>
+                                        <div class="text-start">
+                                            <strong>LinkedIn</strong><br>
+                                            <span class="text-muted">Shubham Kulkarni</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-building text-success me-3 fs-4"></i>
+                                        <div class="text-start">
+                                            <strong>Training at</strong><br>
+                                            <span class="text-muted">Manasvi Tech Solutions, Nagar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <p class="text-muted mb-0">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Feel free to reach out for collaboration, opportunities, or just to connect!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-person-circle"></i> Shubham Kulkarni</h5>
+                    <p class="mb-2">Jr. Software Developer</p>
+                    <p class="mb-0">Building the future, one line of code at a time.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5><i class="bi bi-building"></i> Manasvi Tech Solutions</h5>
+                    <p class="mb-2">Training Excellence Since 2024</p>
+                    <p class="mb-0">Empowering developers with modern skills.</p>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <p class="mb-0">&copy; 2024 Shubham Kulkarni - Training Portfolio | Made with <i class="bi bi-heart-fill text-danger"></i> and Bootstrap 5</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id], header[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Skill progress bar animations
+        const animateProgressBars = () => {
+            const progressBars = document.querySelectorAll('.skill-progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.classList.contains('skill-html') ? '90%' :
+                            bar.classList.contains('skill-css') ? '85%' :
+                            bar.classList.contains('skill-bootstrap') ? '80%' :
+                            bar.classList.contains('skill-responsive') ? '88%' : '0%';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        };
+
+        // Load animations when page is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add fade-in class to sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+            });
+
+            // Animate progress bars when skills section is visible
+            const skillsSection = document.querySelector('#skills');
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateProgressBars();
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            if (skillsSection) {
+                skillsObserver.observe(skillsSection);
+            }
+        });
+
+        // Add loading effect for project links
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.getAttribute('href') && this.getAttribute('href').startsWith('project/')) {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<div class="loading-spinner d-inline-block me-2"></div>Loading...';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Flexbox Playground</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Fira+Mono&display=swap" rel="stylesheet">
+    <style>
+        .gap-input {
+            width: 60px;
+        }
+        .bg-item-1 {
+            background: linear-gradient(135deg, #3498db 70%, #6dd5fa 100%);
+        }
+        .bg-item-2 {
+            background: linear-gradient(135deg, #27ae60 70%, #6dd5fa 100%);
+        }
+        .bg-item-3 {
+            background: linear-gradient(135deg, #f39c12 70%, #f7b731 100%);
+        }
+        .bg-item-4 {
+            background: linear-gradient(135deg, #8e44ad 70%, #6dd5fa 100%);
+        }
+        :root {
+            --primary: #2980b9;
+            --secondary: #6dd5fa;
+            --accent: #ffb347;
+            --bg: #f4f4f4;
+            --bg2: #e3eafc;
+            --shadow: 0 4px 24px #0002;
+            --radius: 16px;
+            --transition: 0.25s cubic-bezier(.4,2,.6,1);
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, var(--bg) 60%, var(--bg2) 100%);
+            color: #222;
+            margin: 0;
+            min-height: 100vh;
+            padding: 0;
+            transition: background 0.5s;
+        }
+        header {
+            background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+            color: #fff;
+            padding: 40px 0 18px 0;
+            text-align: center;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow);
+            position: relative;
+            border-radius: 0 0 var(--radius) var(--radius);
+            overflow: hidden;
+        }
+        header .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 16px #0003;
+            transition: transform .3s;
+        }
+        header .avatar:hover {
+            transform: scale(1.08) rotate(-6deg);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            text-shadow: 0 2px 8px #0002;
+        }
+        h4 {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            letter-spacing: 1.2px;
+            font-size: 1.2rem;
+            opacity: 0.92;
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px 14px 18px 14px;
+            max-width: 1200px;
+            margin: 36px auto 26px auto;
+            position: relative;
+            z-index: 2;
+        }
+        .controls label {
+            font-weight: 600;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--primary);
+            font-size: 1.07rem;
+        }
+        .controls select, .controls input[type="number"], .controls input[type="color"] {
+            padding: 7px 14px;
+            border-radius: 7px;
+            border: 1.5px solid #bbb;
+            font-size: 1.05rem;
+            background: #f7fbff;
+            transition: border .2s;
+        }
+        .controls select:focus, .controls input:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        .controls .add-remove-btn, .controls .reset-btn, .controls .random-btn {
+            background: linear-gradient(90deg, var(--primary) 70%, var(--secondary) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 8px 18px;
+            font-size: 1.13rem;
+            cursor: pointer;
+            margin-left: 8px;
+            font-weight: 700;
+            box-shadow: 0 2px 8px #0001;
+            transition: background var(--transition), transform .15s;
+        }
+        .controls .add-remove-btn:hover, .controls .reset-btn:hover, .controls .random-btn:hover {
+            background: linear-gradient(90deg, var(--secondary) 70%, var(--primary) 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        .controls .random-btn {
+            background: linear-gradient(90deg, #ffb347 70%, #ffcc80 100%);
+            color: #222;
+        }
+        .flex-demo-section {
+            max-width: 1200px;
+            margin: 0 auto 44px auto;
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 36px 24px 30px 24px;
+            position: relative;
+        }
+        .flex-demo-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+        }
+        .outer-container {
+            background: var(--bg2);
+            padding: 32px 12px;
+            border-radius: 18px;
+            border: 2.5px solid #b3d1f7;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 12px #b3d1f733;
+            transition: box-shadow .2s;
+        }
+        .flex-demo-container {
+            display: flex;
+            background: #f7fbff;
+            padding: 36px 22px;
+            border-radius: 12px;
+            min-height: 140px;
+            gap: 18px;
+            transition: all 0.3s;
+            flex-wrap: wrap;
+            border: 2.5px dashed #b3d1f7;
+            position: relative;
+            box-shadow: 0 2px 8px #b3d1f722;
+        }
+        .flex-demo-item {
+            background: linear-gradient(135deg, var(--primary) 70%, var(--secondary) 100%);
+            color: #fff;
+            padding: 28px 22px;
+            -webkit-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .flex-demo-item .item-icon {
+            font-weight: 600;
+            font-size: 1.15rem;
+            box-shadow: 0 2px 8px #0001;
+            transition: all .18s;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid transparent;
+            outline: none;
+        }
+        .flex-demo-item .item-icon {
+            font-size: 2.1rem;
+            margin-bottom: 6px;
+            filter: drop-shadow(0 2px 6px #0002);
+        }
+        .flex-demo-item.selected, .flex-demo-item:focus-visible {
+            outline: 3.5px solid var(--accent);
+            border-color: var(--accent);
+            z-index: 2;
+            background: linear-gradient(135deg, #ffb347 70%, #ffe082 100%);
+            color: #222;
+            box-shadow: 0 4px 16px #ffb34733;
+        }
+        .flex-demo-item .item-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+        .flex-demo-item .item-delete {
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            background: #fff;
+            color: #e74c3c;
+            border: none;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity .18s;
+            z-index: 3;
+            box-shadow: 0 1px 4px #0002;
+        }
+        .flex-demo-item:hover .item-delete, .flex-demo-item.selected .item-delete {
+            opacity: 1;
+        }
+        .item-controls {
+            display: flex;
+            gap: 14px;
+            margin-top: 16px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #f7fbff;
+            border-radius: 10px;
+            padding: 12px 18px;
+            box-shadow: 0 2px 8px #b3d1f722;
+            border: 1.5px solid #b3d1f7;
+        }
+        .item-controls label {
+            font-size: 1.01rem;
+            color: var(--primary);
+            font-weight: 600;
+            gap: 5px;
+        }
+        .item-controls input[type="number"], .item-controls input[type="text"] {
+            width: 54px;
+            font-size: 1.01rem;
+        }
+        .item-controls input[type="color"] {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: none;
+            padding: 0;
+            margin-left: 6px;
+        }
+        .item-controls .item-label-edit {
+            width: 90px;
+            font-size: 1.01rem;
+        }
+        .code-section {
+            max-width: 1200px;
+            margin: 0 auto 44px auto;
+            background: #f7fbff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px 36px 24px 36px;
+        }
+        .code-section .code-title {
+            color: var(--primary);
+            font-size: 1.13rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+        pre {
+            background: #222;
+            color: #fff;
+            border-radius: 8px;
+            padding: 18px;
+            overflow-x: auto;
+            font-size: 1.04rem;
+            margin: 0 0 22px 0;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            box-shadow: 0 2px 8px #0002;
+        }
+        .copy-btn {
+            background: linear-gradient(90deg, var(--primary) 70%, var(--secondary) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 6px 16px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            margin-left: 12px;
+            font-weight: 700;
+            transition: background var(--transition), transform .15s;
+        }
+        .copy-btn:hover {
+            background: linear-gradient(90deg, var(--secondary) 70%, var(--primary) 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            background: #fff;
+            color: var(--primary);
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #0002;
+            transition: background .2s, color .2s;
+        }
+        .theme-toggle:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+        /* Animations */
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .flex-demo-item {
+            animation: popIn .3s;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .flex-demo-section, .controls, .code-section { max-width: 99vw; }
+            .flex-demo-container { padding: 12px 2px; }
+            .code-section { padding: 12px 6vw; }
+        }
+        @media (max-width: 600px) {
+            .controls { gap: 10px; padding: 12px 2vw; }
+            .flex-demo-section { padding: 10px 2vw; }
+            .code-section { padding: 10px 2vw; }
+            .item-controls { flex-direction: column; gap: 8px; }
+        }
+        /* Dark mode */
+        body.dark {
+            --primary: #222e50;
+            --secondary: #3a506b;
+            --accent: #ffb347;
+            --bg: #181c24;
+            --bg2: #232b3a;
+            background: linear-gradient(120deg, var(--bg) 60%, var(--bg2) 100%);
+            color: #e3eafc;
+        }
+        body.dark header {
+            background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+            color: #fff;
+        }
+        body.dark .controls, body.dark .flex-demo-section, body.dark .code-section {
+            background: #232b3a;
+            color: #e3eafc;
+        }
+        body.dark .outer-container, body.dark .item-controls {
+            background: #181c24;
+            border-color: #3a506b;
+        }
+        body.dark .flex-demo-container {
+            background: #232b3a;
+            border-color: #3a506b;
+        }
+        body.dark pre {
+            background: #181c24;
+            color: #fff;
+        }
+        body.dark .copy-btn, body.dark .controls .add-remove-btn, body.dark .controls .reset-btn, body.dark .controls .random-btn {
+            background: linear-gradient(90deg, var(--primary) 70%, var(--secondary) 100%);
+            color: #fff;
+        }
+        body.dark .theme-toggle {
+            background: #232b3a;
+            color: #ffe082;
+        }
+        body.dark .theme-toggle:hover {
+            background: #ffe082;
+            color: #232b3a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Avatar" class="avatar" />
+        <h1><i class="fa-solid fa-cubes"></i> Shubham Kulkarni</h1>
+        <h4>Advanced Flexbox Playground <i class="fa-solid fa-sliders"></i></h4>
+    </header>
+
+    <div class="controls">
+        <label for="direction"><i class="fa-solid fa-arrows-left-right"></i> Flex Direction:</label>
+        <select id="direction">
+            <option value="row">row</option>
+            <option value="row-reverse">row-reverse</option>
+            <option value="column">column</option>
+            <option value="column-reverse">column-reverse</option>
+        </select>
+
+        <label for="justify"><i class="fa-solid fa-align-center"></i> Justify Content:</label>
+        <select id="justify">
+            <option value="flex-start">flex-start</option>
+            <option value="flex-end">flex-end</option>
+            <option value="center">center</option>
+            <option value="space-between">space-between</option>
+            <option value="space-around">space-around</option>
+            <option value="space-evenly">space-evenly</option>
+        </select>
+
+        <label for="align"><i class="fa-solid fa-arrows-up-down"></i> Align Items:</label>
+        <select id="align">
+            <option value="stretch">stretch</option>
+            <option value="flex-start">flex-start</option>
+            <option value="flex-end">flex-end</option>
+            <option value="center">center</option>
+            <option value="baseline">baseline</option>
+        </select>
+
+        <label for="alignContent"><i class="fa-solid fa-layer-group"></i> Align Content:</label>
+        <select id="alignContent">
+            <option value="stretch">stretch</option>
+            <option value="flex-start">flex-start</option>
+            <option value="flex-end">flex-end</option>
+            <option value="center">center</option>
+            <option value="space-between">space-between</option>
+            <option value="space-around">space-around</option>
+        </select>
+
+        <label for="wrap"><i class="fa-solid fa-repeat"></i> Flex Wrap:</label>
+        <select id="wrap">
+            <option value="nowrap">nowrap</option>
+            <option value="wrap">wrap</option>
+            <option value="wrap-reverse">wrap-reverse</option>
+        </select>
+
+        <label for="gap"><i class="fa-solid fa-grip-lines"></i> Gap:</label>
+        <input type="number" id="gap" min="0" max="80" value="18" class="gap-input"> px
+
+        <button type="button" class="add-remove-btn" id="add-item"><i class="fa-solid fa-plus"></i> Add Item</button>
+        <button type="button" class="add-remove-btn" id="remove-item"><i class="fa-solid fa-minus"></i> Remove Item</button>
+        <button type="button" class="random-btn" id="randomize"><i class="fa-solid fa-dice"></i> Randomize</button>
+        <button type="button" class="reset-btn" id="reset-btn"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+    </div>
+
+    <div class="flex-demo-section">
+        <div class="flex-demo-title"><i class="fa-solid fa-play"></i> Live Flexbox Demo</div>
+        <div class="outer-container" id="outer-container">
+            <div class="flex-demo-container" id="flex-demo">
+                <div class="flex-demo-item bg-item-1" tabindex="0" data-index="1">
+                    <button class="item-delete" title="Delete"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="item-icon"><i class="fa-solid fa-rocket"></i></span>
+                    <span class="item-label">Item 1</span>
+                </div>
+                <div class="flex-demo-item bg-item-2" tabindex="0" data-index="2">
+                    <button class="item-delete" title="Delete"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="item-icon"><i class="fa-solid fa-leaf"></i></span>
+                    <span class="item-label">Item 2</span>
+                </div>
+                <div class="flex-demo-item bg-item-3" tabindex="0" data-index="3">
+                    <button class="item-delete" title="Delete"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="item-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <span class="item-label">Item 3</span>
+                </div>
+                <div class="flex-demo-item bg-item-4" tabindex="0" data-index="4">
+                    <button class="item-delete" title="Delete"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="item-icon"><i class="fa-solid fa-gem"></i></span>
+                    <span class="item-label">Item 4</span>
+                </div>
+            </div>
+        </div>
+        <div id="item-controls-area"></div>
+    </div>
+
+    <div class="code-section">
+        <div class="code-title"><i class="fa-solid fa-code"></i> CSS Output
+            <button type="button" class="copy-btn" id="copy-css"><i class="fa-solid fa-copy"></i> Copy</button>
+        </div>
+        <pre id="css-output"></pre>
+        <div class="code-title"><i class="fa-brands fa-html5"></i> HTML Output
+            <button class="copy-btn" id="copy-html"><i class="fa-solid fa-copy"></i> Copy</button>
+        </div>
+        <pre id="html-output"></pre>
+    </div>
+
+    <script>
+        // Flexbox controls
+        const flexDemo = document.getElementById('flex-demo');
+        const outerContainer = document.getElementById('outer-container');
+        const direction = document.getElementById('direction');
+        const justify = document.getElementById('justify');
+        const align = document.getElementById('align');
+        const wrap = document.getElementById('wrap');
+        const alignContent = document.getElementById('alignContent');
+        const gap = document.getElementById('gap');
+        const addItemBtn = document.getElementById('add-item');
+        const removeItemBtn = document.getElementById('remove-item');
+        const resetBtn = document.getElementById('reset-btn');
+        const randomBtn = document.getElementById('randomize');
+        const cssOutput = document.getElementById('css-output');
+        const htmlOutput = document.getElementById('html-output');
+        const copyCssBtn = document.getElementById('copy-css');
+        const copyHtmlBtn = document.getElementById('copy-html');
+        const itemControlsArea = document.getElementById('item-controls-area');
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // Icons and gradients for new items
+        const icons = [
+            'fa-rocket', 'fa-leaf', 'fa-bolt', 'fa-gem', 'fa-heart', 'fa-star', 'fa-moon', 'fa-sun', 'fa-cloud', 'fa-fire', 'fa-apple-whole', 'fa-bug', 'fa-cube', 'fa-fish', 'fa-paw'
+        ];
+        const gradients = [
+            'linear-gradient(135deg, #3498db 70%, #6dd5fa 100%)',
+            'linear-gradient(135deg, #27ae60 70%, #6dd5fa 100%)',
+            'linear-gradient(135deg, #f39c12 70%, #f7b731 100%)',
+            'linear-gradient(135deg, #8e44ad 70%, #6dd5fa 100%)',
+            'linear-gradient(135deg, #e74c3c 70%, #f7b731 100%)',
+            'linear-gradient(135deg, #16a085 70%, #6dd5fa 100%)',
+            'linear-gradient(135deg, #34495e 70%, #6dd5fa 100%)',
+            'linear-gradient(135deg, #ffb347 70%, #ffe082 100%)',
+            'linear-gradient(135deg, #00b894 70%, #00cec9 100%)',
+            'linear-gradient(135deg, #fd79a8 70%, #e17055 100%)',
+            'linear-gradient(135deg, #636e72 70%, #b2bec3 100%)',
+            'linear-gradient(135deg, #00bcd4 70%, #8fd3f4 100%)',
+            'linear-gradient(135deg, #6c5ce7 70%, #00b894 100%)',
+            'linear-gradient(135deg, #fdcb6e 70%, #e17055 100%)',
+            'linear-gradient(135deg, #00cec9 70%, #00b894 100%)'
+        ];
+
+        // State for selected item
+        let selectedItem = null;
+
+        // Store initial HTML for reset
+        const initialItemsHTML = flexDemo.innerHTML;
+        const initialFlexSettings = {
+            direction: direction.value,
+            justify: justify.value,
+            align: align.value,
+            wrap: wrap.value,
+            alignContent: alignContent.value,
+            gap: gap.value
+        };
+
+        function updateFlexbox() {
+            flexDemo.style.flexDirection = direction.value;
+            flexDemo.style.justifyContent = justify.value;
+            flexDemo.style.alignItems = align.value;
+            flexDemo.style.flexWrap = wrap.value;
+            flexDemo.style.alignContent = alignContent.value;
+            flexDemo.style.gap = gap.value + 'px';
+            updateCssOutput();
+            updateHtmlOutput();
+        }
+
+        // Add/Remove items
+        function addItem() {
+            const count = flexDemo.children.length + 1;
+            const icon = icons[(count - 1) % icons.length];
+            const gradient = gradients[(count - 1) % gradients.length];
+            const div = document.createElement('div');
+            div.className = 'flex-demo-item';
+            div.tabIndex = 0;
+            div.setAttribute('data-index', count);
+            div.style.background = gradient;
+            div.innerHTML = `
+                <button class="item-delete" title="Delete"><i class="fa-solid fa-xmark"></i></button>
+                <span class="item-icon"><i class="fa-solid ${icon}"></i></span>
+                <span class="item-label">Item ${count}</span>
+            `;
+            flexDemo.appendChild(div);
+            attachItemEvents(div);
+            updateCssOutput();
+            updateHtmlOutput();
+        }
+        function removeItem() {
+            if (flexDemo.children.length > 1) {
+                if (selectedItem && selectedItem.parentNode === flexDemo) {
+                    selectedItem = null;
+                    itemControlsArea.innerHTML = '';
+                }
+                flexDemo.removeChild(flexDemo.lastElementChild);
+                updateCssOutput();
+                updateHtmlOutput();
+            }
+        }
+        function resetAll() {
+            direction.value = initialFlexSettings.direction;
+            justify.value = initialFlexSettings.justify;
+            align.value = initialFlexSettings.align;
+            wrap.value = initialFlexSettings.wrap;
+            alignContent.value = initialFlexSettings.alignContent;
+            gap.value = initialFlexSettings.gap;
+            flexDemo.innerHTML = initialItemsHTML;
+            Array.from(flexDemo.children).forEach(attachItemEvents);
+            selectedItem = null;
+            itemControlsArea.innerHTML = '';
+            updateFlexbox();
+        }
+
+        // Randomize flexbox settings and items
+        function randomizeAll() {
+            const directions = ['row', 'row-reverse', 'column', 'column-reverse'];
+            const justifies = ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly'];
+            const aligns = ['stretch', 'flex-start', 'flex-end', 'center', 'baseline'];
+            const wraps = ['nowrap', 'wrap', 'wrap-reverse'];
+            const alignContents = ['stretch', 'flex-start', 'flex-end', 'center', 'space-between', 'space-around'];
+            direction.value = directions[Math.floor(Math.random() * directions.length)];
+            justify.value = justifies[Math.floor(Math.random() * justifies.length)];
+            align.value = aligns[Math.floor(Math.random() * aligns.length)];
+            wrap.value = wraps[Math.floor(Math.random() * wraps.length)];
+            alignContent.value = alignContents[Math.floor(Math.random() * alignContents.length)];
+            gap.value = Math.floor(Math.random() * 40) + 8;
+            // Randomize items
+            let n = Math.floor(Math.random() * 6) + 3;
+            flexDemo.innerHTML = '';
+            for (let i = 0; i < n; i++) addItem();
+            updateFlexbox();
+        }
+
+        // Item selection and controls
+        function attachItemEvents(item) {
+            item.addEventListener('click', e => {
+                if (e.target.classList.contains('item-delete')) return;
+                selectItem(item);
+            });
+            item.addEventListener('focus', () => selectItem(item));
+            // Delete button
+            item.querySelector('.item-delete').addEventListener('click', e => {
+                e.stopPropagation();
+                if (item === selectedItem) {
+                    selectedItem = null;
+                    itemControlsArea.innerHTML = '';
+                }
+                item.remove();
+                updateCssOutput();
+                updateHtmlOutput();
+            });
+        }
+        function selectItem(item) {
+            if (selectedItem) selectedItem.classList.remove('selected');
+            selectedItem = item;
+            item.classList.add('selected');
+            showItemControls(item);
+        }
+        function showItemControls(item) {
+            const flexGrow = item.style.flexGrow || 0;
+            const flexShrink = item.style.flexShrink || 1;
+            const flexBasis = item.style.flexBasis || 'auto';
+            const label = item.querySelector('.item-label').textContent;
+            const iconClass = item.querySelector('.item-icon i').classList[1];
+            const bg = item.style.background || gradients[0];
+            itemControlsArea.innerHTML = `
+                <div class="item-controls">
+                    <label><i class="fa-solid fa-expand"></i> flex-grow:
+                        <input type="number" min="0" value="${flexGrow}" id="item-grow">
+                    </label>
+                    <label><i class="fa-solid fa-compress"></i> flex-shrink:
+                        <input type="number" min="0" value="${flexShrink}" id="item-shrink">
+                    </label>
+                    <label><i class="fa-solid fa-ruler-horizontal"></i> flex-basis:
+                        <input type="text" value="${flexBasis}" id="item-basis">
+                    </label>
+                    <label><i class="fa-solid fa-font"></i> Label:
+                        <input type="text" value="${label}" id="item-label-edit" class="item-label-edit">
+                    </label>
+                    <label><i class="fa-solid fa-icons"></i> Icon:
+                        <select id="item-icon-edit">
+                            ${icons.map(ic => `<option value="${ic}" ${ic === iconClass ? 'selected' : ''}>${ic.replace('fa-', '')}</option>`).join('')}
+                        </select>
+                    </label>
+                    <label><i class="fa-solid fa-fill-drip"></i> BG:
+                        <input type="color" id="item-bg-color" value="${getColorFromGradient(bg)}" title="Pick solid color">
+                    </label>
+                </div>
+            `;
+            document.getElementById('item-grow').addEventListener('input', e => {
+                item.style.flexGrow = e.target.value;
+                updateCssOutput();
+                updateHtmlOutput();
+            });
+            document.getElementById('item-shrink').addEventListener('input', e => {
+                item.style.flexShrink = e.target.value;
+                updateCssOutput();
+                updateHtmlOutput();
+            });
+            document.getElementById('item-basis').addEventListener('input', e => {
+                item.style.flexBasis = e.target.value;
+                updateCssOutput();
+                updateHtmlOutput();
+            });
+            document.getElementById('item-label-edit').addEventListener('input', e => {
+                item.querySelector('.item-label').textContent = e.target.value;
+                updateHtmlOutput();
+            });
+            document.getElementById('item-icon-edit').addEventListener('change', e => {
+                item.querySelector('.item-icon i').className = 'fa-solid ' + e.target.value;
+                updateHtmlOutput();
+            });
+            document.getElementById('item-bg-color').addEventListener('input', e => {
+                item.style.background = e.target.value;
+                updateHtmlOutput();
+            });
+        }
+        function getColorFromGradient(bg) {
+            // Try to extract first color from gradient, fallback to #3498db
+            let m = bg.match(/#([0-9a-fA-F]{6})/);
+            return m ? '#' + m[1] : '#3498db';
+        }
+
+        // CSS Output
+        function updateCssOutput() {
+            let css = `.outer-container {\n  background: #e3eafc;\n  padding: 32px 12px;\n  border-radius: 18px;\n  border: 2.5px solid #b3d1f7;\n}\n`;
+            css += `.flex-demo-container {\n`;
+            css += `  display: flex;\n`;
+            css += `  flex-direction: ${direction.value};\n`;
+            css += `  justify-content: ${justify.value};\n`;
+            css += `  align-items: ${align.value};\n`;
+            css += `  flex-wrap: ${wrap.value};\n`;
+            css += `  align-content: ${alignContent.value};\n`;
+            css += `  gap: ${gap.value}px;\n`;
+            css += `}\n`;
+            Array.from(flexDemo.children).forEach((item, i) => {
+                const grow = item.style.flexGrow || 0;
+                const shrink = item.style.flexShrink || 1;
+                const basis = item.style.flexBasis || 'auto';
+                const bg = item.style.background;
+                if (grow != 0 || shrink != 1 || basis != 'auto' || bg) {
+                    css += `.flex-demo-item:nth-child(${i+1}) {\n`;
+                    if (grow != 0 || shrink != 1 || basis != 'auto')
+                        css += `  flex: ${grow} ${shrink} ${basis};\n`;
+                    if (bg)
+                        css += `  background: ${bg};\n`;
+                    css += `}\n`;
+                }
+            });
+            cssOutput.textContent = css;
+        }
+
+        // HTML Output
+        function updateHtmlOutput() {
+            let html = `<div class="outer-container">\n  <div class="flex-demo-container">\n`;
+            Array.from(flexDemo.children).forEach(item => {
+                // Get flex styles if set
+                let flexStyle = '';
+                if (item.style.flexGrow || item.style.flexShrink || item.style.flexBasis || item.style.background) {
+                    const grow = item.style.flexGrow || 0;
+                    const shrink = item.style.flexShrink || 1;
+                    const basis = item.style.flexBasis || 'auto';
+                    const bg = item.style.background;
+                    flexStyle = ` style="flex: ${grow} ${shrink} ${basis};${bg ? ` background: ${bg};` : ''}"`;
+                }
+                // Get icon HTML
+                const iconSpan = item.querySelector('.item-icon').outerHTML;
+                const label = item.querySelector('.item-label').textContent;
+                html += `    <div class="flex-demo-item"${flexStyle}>${iconSpan}<span class="item-label">${label}</span></div>\n`;
+            });
+            html += `  </div>\n</div>`;
+            htmlOutput.textContent = html;
+        }
+
+        // Copy CSS
+        copyCssBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(cssOutput.textContent);
+            copyCssBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(() => {
+                copyCssBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+            }, 1200);
+        });
+        // Copy HTML
+        copyHtmlBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(htmlOutput.textContent);
+            copyHtmlBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(() => {
+                copyHtmlBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+            }, 1200);
+        });
+
+        // Attach events to initial items
+        Array.from(flexDemo.children).forEach(attachItemEvents);
+
+        // Add/Remove/Reset/Randomize item events
+        addItemBtn.addEventListener('click', addItem);
+        removeItemBtn.addEventListener('click', removeItem);
+        resetBtn.addEventListener('click', resetAll);
+        randomBtn.addEventListener('click', randomizeAll);
+
+        // Flexbox control events
+        direction.addEventListener('change', updateFlexbox);
+        justify.addEventListener('change', updateFlexbox);
+        align.addEventListener('change', updateFlexbox);
+        wrap.addEventListener('change', updateFlexbox);
+        alignContent.addEventListener('change', updateFlexbox);
+        gap.addEventListener('input', updateFlexbox);
+
+        // Set initial values
+        updateFlexbox();
+
+        // Keyboard navigation for accessibility
+        flexDemo.addEventListener('keydown', e => {
+            if (!selectedItem) return;
+            let idx = Array.from(flexDemo.children).indexOf(selectedItem);
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                idx = (idx + 1) % flexDemo.children.length;
+                flexDemo.children[idx].focus();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                idx = (idx - 1 + flexDemo.children.length) % flexDemo.children.length;
+                flexDemo.children[idx].focus();
+            }
+        });
+
+        // Theme toggle
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            themeToggle.innerHTML = document.body.classList.contains('dark')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+
+        // Auto-select first item on load
+        setTimeout(() => {
+            flexDemo.children[0].focus();
+        }, 200);
+    </script>
+</body>
+</html>

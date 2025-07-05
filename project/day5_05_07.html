@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Adventures - Bootstrap 5 Demo</title>
+    
+    <!-- Bootswatch Theme (Cerulean) for a unique look -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            padding-top: 56px; /* Adjust body padding for fixed-top navbar */
+        }
+        .component-section {
+            padding-top: 4.5rem;
+            margin-top: -4.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar-nav .nav-link {
+            font-size: 0.9rem;
+        }
+        .sidebar-nav .nav-link.active {
+            font-weight: bold;
+        }
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .carousel-item img {
+            filter: brightness(0.7);
+        }
+        .toast-container-zindex {
+            z-index: 1100;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#sidebarMenu" data-bs-offset="100">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-compass-fill"></i> Wanderlust Adventures</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#cards">Featured Tours</a></li>
+                            <li><a class="dropdown-item" href="#carousel">Gallery</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#forms">Book Now</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse position-sticky pt-3 sidebar-nav">
+                <div class="position-sticky pt-3">
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                      <span>UI Components</span>
+                    </h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="#alerts">Alerts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#accordion">Accordion (FAQ)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#buttons">Buttons</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#cards">Cards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#carousel">Carousel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#forms">Forms</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#grid">Grid System</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#modal">Modal</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#offcanvas">Offcanvas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#popups">Popups</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#toasts">Toasts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#utilities">Utilities</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <header class="text-center my-5">
+                    <h1>Explore the World with Wanderlust Adventures</h1>
+                    <p class="text-muted">Discover our latest tours and features, beautifully designed with Bootstrap 5.</p>
+                    <hr>
+                </header>
+
+                <!-- Alerts -->
+                <section id="alerts" class="component-section">
+                    <h3><i class="bi bi-exclamation-triangle-fill"></i> Alerts</h3>
+                    <div class="alert alert-success" role="alert">
+                      Your booking for the Paris tour is confirmed! Check your <a href="#" class="alert-link">email for details</a>.
+                    </div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <strong>Limited Spots!</strong> The Amazon Rainforest Expedition is almost full. Book now!
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </section>
+
+                <!-- Accordion -->
+                <section id="accordion" class="component-section">
+                    <h3><i class="bi bi-arrows-collapse"></i> Accordion (FAQ)</h3>
+                    <div class="accordion" id="faqAccordion">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What is the cancellation policy?
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                          <div class="accordion-body">
+                            We offer a full refund for cancellations made up to 30 days before the tour date. A 50% refund is available for cancellations made between 15 and 29 days prior. No refunds are provided for cancellations within 14 days of the tour.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Are flights included in the tour packages?
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                          <div class="accordion-body">
+                            Our standard packages do not include international airfare. However, we can assist you with booking flights through our travel partners to ensure you get the best rates and convenient schedules.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </section>
+
+                <!-- Buttons -->
+                <section id="buttons" class="component-section">
+                    <h3><i class="bi bi-hand-index-thumb"></i> Buttons</h3>
+                    <button class="btn btn-primary">Bookings <span class="badge bg-light text-dark">4</span></button>
+                    <button class="btn btn-outline-secondary">View Gallery</button>
+                    <button class="btn btn-success btn-lg">Book a Tour</button>
+                    <button class="btn btn-danger btn-sm">Cancel</button>
+                    <button class="btn btn-info" disabled>Offer Expired</button>
+                </section>
+
+                <!-- Cards -->
+                <section id="cards" class="component-section">
+                    <h3><i class="bi bi-card-text"></i> Featured Tours</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card text-white bg-primary">
+                                <div class="card-header">Featured Destination</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Vibrant Tokyo</h5>
+                                    <p class="card-text">Experience the bustling metropolis, ancient temples, and world-class cuisine of Tokyo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <h5 class="card-title">Italian Riviera Special</h5>
+                                    <p class="card-text">Enjoy a 15% discount on our 7-day tour of the stunning Italian coast. Offer ends soon!</p>
+                                    <a href="#forms" class="btn btn-success">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <img src="https://picsum.photos/id/1015/400/200" class="card-img-top" alt="Santorini">
+                                <div class="card-body">
+                                    <h5 class="card-title">Santorini, Greece</h5>
+                                    <p class="card-text">Discover the iconic white-washed villages and breathtaking sunsets of Santorini.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Carousel -->
+                <section id="carousel" class="component-section">
+                    <h3><i class="bi bi-images"></i> Destination Gallery</h3>
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      </div>
+                      <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                          <img src="https://picsum.photos/id/1043/800/400" class="d-block w-100" alt="Mountain Valley">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Himalayan Treks</h5>
+                            <p>Challenge yourself with our guided treks through the majestic Himalayas.</p>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="https://picsum.photos/id/1050/800/400" class="d-block w-100" alt="Beach Sunset">
+                          <div class="carousel-caption d-none d-md-block">
+                            <h5>Tropical Getaways</h5>
+                            <p>Relax and unwind on the pristine beaches of the Maldives.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                </section>
+
+                <!-- Forms -->
+                <section id="forms" class="component-section">
+                    <h3><i class="bi bi-input-cursor-text"></i> Book Your Adventure</h3>
+                    <form class="row g-3">
+                      <div class="col-md-6">
+                        <label for="inputFullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="inputFullName" placeholder="John Doe">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="email@example.com">
+                      </div>
+                      <div class="col-12">
+                        <label for="inputTour" class="form-label">Choose Tour</label>
+                        <select id="inputTour" class="form-select">
+                          <option selected>Choose...</option>
+                          <option>Himalayan Treks</option>
+                          <option>Italian Riviera Special</option>
+                          <option>Vibrant Tokyo</option>
+                          <option>Santorini, Greece</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputDate" class="form-label">Preferred Date</label>
+                        <input type="date" class="form-control" id="inputDate">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputTravelers" class="form-label">Number of Travelers</label>
+                        <input type="number" class="form-control" id="inputTravelers" min="1" value="1">
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                          <label class="form-check-label" for="gridCheck">
+                            Sign me up for the newsletter
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                      </div>
+                    </form>
+                </section>
+
+                <!-- Grid -->
+                <section id="grid" class="component-section">
+                    <h3><i class="bi bi-grid-3x3-gap"></i> Grid System</h3>
+                    <div class="row text-center">
+                        <div class="col-lg-4 col-md-6 p-2 bg-light border">.col-lg-4 .col-md-6</div>
+                        <div class="col-lg-4 col-md-6 p-2 bg-light border">.col-lg-4 .col-md-6</div>
+                        <div class="col-lg-4 col-md-12 p-2 bg-light border">.col-lg-4 .col-md-12</div>
+                    </div>
+                </section>
+
+                <!-- Modal -->
+                <section id="modal" class="component-section">
+                    <h3><i class="bi bi-window"></i> Modal</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                      About Wanderlust Adventures
+                    </button>
+                </section>
+
+                <!-- Offcanvas -->
+                <section id="offcanvas" class="component-section">
+                    <h3><i class="bi bi-layout-sidebar-inset"></i> Offcanvas</h3>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                      Quick Links
+                    </button>
+                </section>
+
+                <!-- Popups -->
+                <section id="popups" class="component-section">
+                    <h3><i class="bi bi-chat-square-dots"></i> Popups (Tooltips & Popovers)</h3>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="See our customer reviews!">
+                      Customer Reviews
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="popover" title="Contact Us" data-bs-content="Call us at 1-800-WANDER or email contact@wanderlust.com">
+                      Contact Info
+                    </button>
+                <section id="toasts" class="component-section">
+                    <h3><i class="bi bi-bell"></i> Toasts</h3>
+                    <button type="button" class="btn btn-primary" id="liveToastBtn">Show Notification</button>
+                    <div class="position-fixed bottom-0 end-0 p-3 toast-container-zindex">
+                      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                          <i class="bi bi-bell-fill me-2"></i>
+                      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                          <i class="bi bi-bell-fill me-2"></i>
+                          <strong class="me-auto">Wanderlust Adventures</strong>
+                          <small>Just now</small>
+                          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                          A new tour to Costa Rica has just been added!
+                        </div>
+                      </div>
+                    </div>
+                </section>
+
+                <!-- Utilities -->
+                <section id="utilities" class="component-section">
+                    <h3><i class="bi bi-palette"></i> Utilities (Colors, Spacing, etc.)</h3>
+                    <p class="text-primary">.text-primary for main brand color.</p>
+                    <p class="text-danger">.text-danger for important warnings.</p>
+                    <div class="p-3 mb-2 bg-success text-white">.bg-success with .p-3 and .mb-2 for success messages.</div>
+                    <div class="mt-4 p-3 bg-light text-dark border rounded w-75">.bg-light with .mt-4, .p-3, .border, .rounded and .w-75</div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Wanderlust Adventures. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Definition -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aboutModalLabel">About Wanderlust Adventures</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Wanderlust Adventures was founded on the principle of creating unforgettable travel experiences. This page is a demonstration of the Bootstrap 5 framework used to build our user-friendly interface.</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Offcanvas Definition -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Quick Links</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          Use this space for quick navigation, a shopping cart summary, or contact information. It's a versatile component for keeping content accessible without cluttering the main page.
+        </div>
+        <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Popular Destinations
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Paris</a></li>
+            <li><a class="dropdown-item" href="#">Rome</a></li>
+            <li><a class="dropdown-item" href="#">New York</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Initialize Tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        // Initialize Popovers
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+
+        // Initialize Toasts
+        const toastTrigger = document.getElementById('liveToastBtn');
+        const toastLiveExample = document.getElementById('liveToast');
+        if (toastTrigger) {
+          toastTrigger.addEventListener('click', () => {
+            const toast = new bootstrap.Toast(toastLiveExample);
+            toast.show();
+          });
+        }
+    </script>
+</body>
+</html>
