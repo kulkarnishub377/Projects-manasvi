@@ -77,10 +77,36 @@
     height: 100px;
 	width: 100px;
     }
+    .home-nav {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: #e82222;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(232, 34, 34, 0.3);
+        transition: all 0.3s ease;
+    }
+    .home-nav:hover {
+        background: #2980b9;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(41, 128, 185, 0.4);
+    }
 
 </style>
 </head>
 <body>
+<!-- Home Navigation Link -->
+<a href="../index.html" class="home-nav">
+    🏠 Back to Work Portfolio
+</a>
+
 <H1>Shubham Kulkarni</H1>
 <h4>Day 3 - 03/07/2024</h4>
 
@@ -130,6 +156,7 @@
     <div>Box 6</div>
 </div>
 
+<a href="#" class="home-nav">Home</a>
 
 </body>
 </html>

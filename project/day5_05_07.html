@@ -40,9 +40,37 @@
         .toast-container-zindex {
             z-index: 1100;
         }
+        
+        /* Home Navigation Link */
+        .home-nav {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 1000;
+            background: #0d6efd;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+            transition: all 0.3s ease;
+        }
+        .home-nav:hover {
+            background: #0b5ed7;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(11, 94, 215, 0.4);
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#sidebarMenu" data-bs-offset="100">
+
+    <!-- Home Navigation Link -->
+    <a href="../index.html" class="home-nav">
+        🏠 Back to Work Portfolio
+    </a>
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">

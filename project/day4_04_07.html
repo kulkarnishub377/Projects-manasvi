@@ -29,6 +29,29 @@
             color: var(--text-color);
         }
 
+        /* Home Navigation Link */
+        .home-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .home-nav:hover {
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(108, 117, 125, 0.4);
+        }
+
         header {
             background-color: var(--header-bg-color);
             color: var(--header-text-color);
@@ -261,6 +284,10 @@
     </style>
 </head>
 <body>
+    <!-- Home Navigation Link -->
+    <a href="../index.html" class="home-nav">
+        🏠 Back to Portfolio
+    </a>
 
     <header>
         <h1 class="animated-heading">HTML & CSS Showcase</h1>

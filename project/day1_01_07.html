@@ -67,9 +67,38 @@
         .sample-paragraph {
             text-decoration: underline;
         }
+        .home-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #2d6cdf;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(45, 108, 223, 0.3);
+            transition: all 0.3s ease;
+        }
+        .home-nav:hover {
+            background: #e67e22;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(230, 126, 34, 0.4);
+        }
+        .home-nav i {
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
+    <!-- Home Navigation Link -->
+    <a href="../index.html" class="home-nav">
+        🏠 Back to Work Portfolio
+    </a>
+    
     <h1>This is <strong>Shubham Kulkarni</strong></h1>
     <h2><i>H2 Heading</i></h2>
     <mark>Shubham</mark>
@@ -94,5 +123,7 @@
     <hr>
     <iframe src="https://www.manasvi.tech/" title="Manasvi Tech Website" width="100%" height="300"></iframe>
     <hr>
+
+    <a href="https://www.manasvi.tech/" class="home-nav"><i class="home-icon"></i> Home</a>
 </body>
 </html>
