@@ -169,6 +169,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const timelineData = [
     {
+        date: "07/07/2025",
+        title: "JavaScript Essentials: DOM Manipulation & Event Handling",
+        description: "Developed interactive features using JavaScript, focusing on DOM selection, event listeners, and dynamic content updates. Implemented smooth scrolling, animated progress bars, and timeline rendering for a modern portfolio.",
+        technologies: ["JavaScript", "DOM", "Events", "ES6+"],
+        items: [
+            { icon: "bi bi-cursor-fill text-info", text: "Implemented smooth scrolling for navigation" },
+            { icon: "bi bi-lightning-charge-fill text-info", text: "Animated skill progress bars on scroll" },
+            { icon: "bi bi-calendar2-range text-info", text: "Dynamically rendered timeline from data" },
+            { icon: "bi bi-eye-fill text-info", text: "Used IntersectionObserver for animations" }
+        ],
+        link: "project/day6_07_07.html",
+    },
+    {
         date: "05/07/2025",
         title: "Bootstrap 5 Showcase: Components & Responsive Design",
         description: "Built a travel-themed website to demonstrate a wide array of Bootstrap 5 components, including responsive navigation, modals, carousels, and forms.",
@@ -265,16 +278,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const loadMoreBtn = document.getElementById('timeline-loadmore-btn');
     const showLessBtn = document.getElementById('timeline-showless-btn');
-    let itemsToShow = 3;
+    const initialItems = 3;
+    const incrementItems = 3;
     let itemsLoaded = 0;
 
-    function renderTimeline() {
+    function renderTimeline(isInitial = false) {
         if (!timelineList) return;
 
         const fragment = document.createDocumentFragment();
-        const endIndex = Math.min(itemsLoaded + itemsToShow, timelineData.length);
+        const startIndex = isInitial ? 0 : itemsLoaded;
+        const itemsToLoad = isInitial ? initialItems : incrementItems;
+        const endIndex = Math.min(startIndex + itemsToLoad, timelineData.length);
 
-        for (let i = itemsLoaded; i < endIndex; i++) {
+        for (let i = startIndex; i < endIndex; i++) {
             const item = timelineData[i];
             const timelineItem = document.createElement('div');
             timelineItem.classList.add('timeline-item', 'fade-in');
@@ -308,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
             loadMoreBtn.style.display = itemsLoaded >= timelineData.length ? 'none' : 'inline-block';
         }
         if (showLessBtn) {
-            showLessBtn.style.display = itemsLoaded > itemsToShow ? 'inline-block' : 'none';
+            showLessBtn.style.display = itemsLoaded > initialItems ? 'inline-block' : 'none';
         }
 
         // Animate new items
@@ -326,17 +342,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!timelineList) return;
         timelineList.innerHTML = '';
         itemsLoaded = 0;
-        if (loadMoreBtn) loadMoreBtn.style.display = 'inline-block';
-        if (showLessBtn) showLessBtn.style.display = 'none';
-        renderTimeline();
+        renderTimeline(true);
     }
 
     if (timelineList) {
         // Initial render
-        renderTimeline();
+        renderTimeline(true);
 
         if (loadMoreBtn) {
-            loadMoreBtn.addEventListener('click', renderTimeline);
+            loadMoreBtn.addEventListener('click', () => renderTimeline(false));
         }
         if (showLessBtn) {
             showLessBtn.addEventListener('click', resetTimeline);

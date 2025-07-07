@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demos | Shubham Kulkarni</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { background: #f4f8fb; }
+        .navbar-brand { font-weight: bold; }
+        .section-title { margin-top: 2rem; margin-bottom: 1rem; }
+        .demo-card { min-height: 240px; }
+        .output-label { font-weight: 500; color: #0d6efd; }
+        .output-value { min-width: 80px; display: inline-block; }
+        .code-sample { background: #f8f9fa; border-radius: 5px; padding: 6px 10px; font-size: 0.95em; color: #495057; }
+        #freeze-overlay {
+            display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+            background:rgba(0,0,0,0.5); z-index:2000; color:white;
+            justify-content:center; align-items:center; font-size:2em;
+            flex-direction:column;
+        }
+        #freeze-overlay .freeze-box {
+            background: #222e3c;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 0 24px #0004;
+            text-align: center;
+        }
+        #freeze-overlay .btn {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding: 1.5rem 0;
+            background: #e3eaf3;
+            text-align: center;
+            color: #6c757d;
+        }
+        .output-value {
+            word-break: break-all;
+        }
+        .pt-5 {
+            padding-top: 80px !important;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand" href="#">JavaScript Demos</a>
+        <a href="../index.html" class="btn btn-outline-light ms-auto"><i class="bi bi-house-door"></i> Portfolio</a>
+<div class="container pt-5">
+</nav>
+
+<div class="container">
+    <header class="mb-4">
+        <h1 class="display-5 fw-bold">Shubham Kulkarni</h1>
+        <p class="lead mb-1">Day 6 - 07/07/2025</p>
+        <hr>
+        <h2 class="section-title">JavaScript Concepts Showcase</h2>
+        <p class="text-muted">Explore key JavaScript concepts interactively. Click each button to see the demo in action.</p>
+    </header>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Variables -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-123"></i> Variables</h5>
+                    <p class="card-text">Demonstrates declaring and using a variable.</p>
+                    <button class="btn btn-primary btn-sm mb-2" onclick="showVariable()">Show Variable Value</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="var-demo" class="output-value"></span>
+                    </div>
+                    <div class="code-sample mt-2">let x = 5;</div>
+                </div>
+            </div>
+        </div>
+        <!-- Constants -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-circle-half"></i> Constants</h5>
+                    <p class="card-text">Shows how to declare a constant value.</p>
+                    <button class="btn btn-primary btn-sm mb-2" onclick="showConstant()">Show Constant Value</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="const-demo" class="output-value"></span>
+                    </div>
+                    <div class="code-sample mt-2">const PI = 3.14;</div>
+                </div>
+            </div>
+        </div>
+        <!-- Scope -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-box"></i> Scope</h5>
+                    <p class="card-text">Illustrates block scope with <code>let</code>.</p>
+                    <button class="btn btn-primary btn-sm mb-2" onclick="scopeDemo()">Show Scope Example</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="scope-demo" class="output-value"></span>
+                    </div>
+                    <div class="code-sample mt-2">
+                        let a = 10;<br>
+                        if (true) { let a = 20; }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Loops -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-arrow-repeat"></i> Loops</h5>
+                    <p class="card-text">Outputs numbers 1 to 5 using a <code>for</code> loop.</p>
+                    <button class="btn btn-primary btn-sm mb-2" onclick="loopDemo()">Show Loop Output</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="loop-demo" class="output-value"></span>
+                    </div>
+                    <div class="code-sample mt-2">for (let i = 1; i &lt;= 5; i++)</div>
+                </div>
+            </div>
+        </div>
+        <!-- Functions -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-person-badge"></i> Functions</h5>
+                    <p class="card-text">Calls a function with a parameter.</p>
+                    <button class="btn btn-primary btn-sm mb-2" onclick="showGreet()">Call greet('Shubham')</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="func-demo" class="output-value"></span>
+                    </div>
+                    <div class="code-sample mt-2">function greet(name) { ... }</div>
+                </div>
+            </div>
+        </div>
+        <!-- Data Types -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-diagram-3"></i> Data Types</h5>
+                    <p class="card-text">Shows the result of <code>typeof</code> on various values.</p>
+                    <button class="btn btn-primary btn-sm mb-2" onclick="dataTypeDemo()">Show Data Types</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="datatype-demo" class="output-value"></span>
+                    </div>
+                    <div class="code-sample mt-2">typeof 123, typeof 'abc', ...</div>
+                </div>
+            </div>
+        </div>
+        <!-- Alert -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-bell"></i> Alert</h5>
+                    <p class="card-text">Shows a browser alert dialog.</p>
+                    <button class="btn btn-warning btn-sm mb-2" onclick="showAlert()">Show Alert</button>
+                </div>
+            </div>
+        </div>
+        <!-- Console -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-terminal"></i> Console</h5>
+                    <p class="card-text">Logs a message to the browser console.</p>
+                    <button class="btn btn-secondary btn-sm mb-2" onclick="logToConsole()">Log to Console</button>
+                </div>
+            </div>
+        </div>
+        <!-- Document -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-file-earmark-text"></i> Document</h5>
+                    <p class="card-text">Displays the current document title.</p>
+                    <button class="btn btn-info btn-sm mb-2" onclick="showDocumentTitle()">Show Document Title</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="doc-demo" class="output-value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Switch -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-toggle-on"></i> Switch</h5>
+                    <p class="card-text">Checks input value using a <code>switch</code> statement.</p>
+                    <div class="input-group mb-2">
+                        <input type="number" id="switch-input" min="1" max="3" class="form-control form-control-sm" placeholder="Enter 1-3">
+                        <button class="btn btn-primary btn-sm" onclick="switchDemo()">Check</button>
+                    </div>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="switch-demo" class="output-value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Array Methods -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-list-ol"></i> Array Methods</h5>
+                    <p class="card-text">Demonstrates <code>map</code> and <code>filter</code> on arrays.</p>
+                    <button class="btn btn-primary btn-sm mb-2" onclick="arrayMethodsDemo()">Show Array Methods</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="array-demo" class="output-value"></span>
+                    </div>
+                    <div class="code-sample mt-2">[1,2,3].map(x=&gt;x*2).filter(x=&gt;x&gt;2)</div>
+                </div>
+            </div>
+        </div>
+        <!-- Object Demo -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-braces"></i> Object Demo</h5>
+                    <p class="card-text">Shows object property access and method.</p>
+                    <button class="btn btn-primary btn-sm mb-2" onclick="objectDemo()">Show Object Demo</button>
+                    <div>
+                        <span class="output-label">Output:</span>
+                        <span id="object-demo" class="output-value"></span>
+                    </div>
+                    <div class="code-sample mt-2">let user = {name:'Sam', greet(){...}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- ...existing code... -->
+        <!-- Perform All Demos -->
+        <div class="col">
+            <div class="card demo-card shadow-sm h-100">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title"><i class="bi bi-stars"></i> Perform All Demos</h5>
+                        <p class="card-text">Runs all demos and shows a summary alert.</p>
+                    </div>
+                    <button class="btn btn-success btn-lg mt-3" onclick="performAllDemos()">Perform All Demos &amp; Show Alert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    &copy; 2025 Shubham Kulkarni &mdash; JavaScript Demos Showcase
+</footer>
+
+<script>
+function showVariable() {
+    let x = 5;
+    document.getElementById('var-demo').innerText = x;
+}
+function showConstant() {
+    const PI = 3.14;
+    document.getElementById('const-demo').innerText = PI;
+}
+function scopeDemo() {
+    let text = '';
+    let a = 10;
+    if (true) {
+        let a = 20;
+        text = 'Inside block: ' + a + ', ';
+    }
+    text += 'Outside block: ' + a;
+    document.getElementById('scope-demo').innerText = text;
+}
+function loopDemo() {
+    let out = '';
+    for (let i = 1; i <= 5; i++) {
+        out += i + ' ';
+    }
+    document.getElementById('loop-demo').innerText = out.trim();
+}
+function greet(name) {
+    return 'Hello, ' + name + '!';
+}
+function showGreet() {
+    document.getElementById('func-demo').innerText = greet('Shubham');
+}
+function dataTypeDemo() {
+    let types = [
+        typeof 123,        // number
+        typeof 'abc',      // string
+        typeof true,       // boolean
+        typeof {},         // object
+        typeof [],         // object (array)
+        typeof undefined,  // undefined
+        typeof null        // object (special case)
+    ];
+    document.getElementById('datatype-demo').innerText = types.join(', ');
+}
+function showAlert() {
+    alert('This is an alert!');
+}
+function logToConsole() {
+    console.log('Hello from console!');
+    alert('Check your browser console!');
+}
+function showDocumentTitle() {
+    document.getElementById('doc-demo').innerText = document.title;
+}
+function switchDemo() {
+    let val = document.getElementById('switch-input').value;
+    let msg = '';
+    switch (val) {
+        case '1':
+            msg = 'You entered One';
+            break;
+        case '2':
+            msg = 'You entered Two';
+            break;
+        case '3':
+            msg = 'You entered Three';
+            break;
+        default:
+            msg = 'Enter 1, 2, or 3';
+    }
+    document.getElementById('switch-demo').innerText = msg;
+}
+function arrayMethodsDemo() {
+    let arr = [1,2,3];
+    let mapped = arr.map(x=>x*2);
+    let filtered = mapped.filter(x=>x>2);
+    document.getElementById('array-demo').innerText = 'Mapped: [' + mapped.join(', ') + '], Filtered: [' + filtered.join(', ') + ']';
+}
+function objectDemo() {
+    let user = {
+        name: 'Sam',
+        greet() { return 'Hi, I am ' + this.name; }
+    };
+    document.getElementById('object-demo').innerText = user.greet();
+}
+
+// ...existing code...
+
+// Perform all demos and show alert
+function performAllDemos() {
+    showVariable();
+    showConstant();
+    scopeDemo();
+    loopDemo();
+    showGreet();
+    dataTypeDemo();
+    arrayMethodsDemo();
+    objectDemo();
+    showDocumentTitle();
+    document.getElementById('switch-input').value = 2;
+    switchDemo();
+    logToConsole();
+    showAlert();
+    setTimeout(function() {
+        alert('All demos performed successfully!');
+    }, 500);
+}
+</script>
+</body>
+</html>
