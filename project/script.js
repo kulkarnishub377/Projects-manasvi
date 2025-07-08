@@ -169,6 +169,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const timelineData = [
     {
+        date: "08/07/2025",
+        title: "Manasvi E-Learning Website: Launch & Analytics Integration",
+        description: "Launched a modern e-learning platform for Manasvi Tech, featuring course modules, interactive lessons, and student progress analytics. Added project to portfolio and timeline with code analysis.",
+        technologies: ["HTML5", "CSS3", "Bootstrap 5", "JavaScript", "Data Analysis"],
+        items: [
+            { icon: "bi bi-mortarboard text-primary", text: "Created E-Learning website structure and UI" },
+            { icon: "bi bi-journal-richtext text-info", text: "Integrated course modules and resources" },
+            { icon: "bi bi-bar-chart-line-fill text-success", text: "Added analytics for student progress" },
+            { icon: "bi bi-link-45deg text-secondary", text: "Linked project in portfolio and timeline" }
+        ],
+        link: "Manasvi Elerning wesite/index.html",
+        featured: true
+    },
+    {
         date: "07/07/2025",
         title: "JavaScript Essentials: DOM Manipulation & Event Handling",
         description: "Developed interactive features using JavaScript, focusing on DOM selection, event listeners, and dynamic content updates. Implemented smooth scrolling, animated progress bars, and timeline rendering for a modern portfolio.",
@@ -276,11 +290,40 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     ].sort((a, b) => parseCustomDate(b.date) - parseCustomDate(a.date));
 
-    const loadMoreBtn = document.getElementById('timeline-loadmore-btn');
-    const showLessBtn = document.getElementById('timeline-showless-btn');
+    // --- Add Load More / Show Less Buttons if not present ---
+    let loadMoreBtn = document.getElementById('timeline-loadmore-btn');
+    let showLessBtn = document.getElementById('timeline-showless-btn');
     const initialItems = 3;
     const incrementItems = 3;
     let itemsLoaded = 0;
+
+    // Always create and insert Load More / Show Less buttons after timelineList
+    if (timelineList) {
+        // Remove any existing button container to avoid duplicates
+        const oldBtnContainer = document.querySelector('.timeline-btn-container');
+        if (oldBtnContainer) oldBtnContainer.remove();
+
+        // Create button container
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'timeline-btn-container text-center my-4';
+
+        // Create Load More button
+        loadMoreBtn = document.createElement('button');
+        loadMoreBtn.id = 'timeline-loadmore-btn';
+        loadMoreBtn.className = 'btn btn-outline-primary mx-2';
+        loadMoreBtn.textContent = 'Load More';
+
+        // Create Show Less button
+        showLessBtn = document.createElement('button');
+        showLessBtn.id = 'timeline-showless-btn';
+        showLessBtn.className = 'btn btn-outline-secondary mx-2';
+        showLessBtn.textContent = 'Show Less';
+        showLessBtn.style.display = 'none';
+
+        btnContainer.appendChild(loadMoreBtn);
+        btnContainer.appendChild(showLessBtn);
+        timelineList.parentNode.insertBefore(btnContainer, timelineList.nextSibling);
+    }
 
     function renderTimeline(isInitial = false) {
         if (!timelineList) return;
