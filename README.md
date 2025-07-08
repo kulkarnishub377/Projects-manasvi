@@ -147,8 +147,8 @@ Hi! I'm <b>Shubham Kulkarni</b>, a passionate <b>Jr. Software Developer</b> from
 ## 🏢 About Manasvi Tech Solutions
 
 <b>Manasvi Tech Solutions</b> — Nashik, Maharashtra<br>
-<b>Focus:</b> Full-Stack Web Development<br>
-<b>Duration:</b> July 2024 – Ongoing<br>
+<b>Focus:</b> Software Development<br>
+<b>Duration:</b> July 2025 – Ongoing<br>
 <b>Program:</b> Intensive Web Development Training
 
 ---
