@@ -1,184 +1,239 @@
-# 🚀 Shubham Kulkarni - Jr. Software Developer Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://kulkarnishub377.github.io/sk/)
-[![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue)](https://pages.github.com/)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=flat&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+# 🚀 Shubham Kulkarni — Jr. Software Developer Portfolio
 
-## 👨‍💻 About Me
+<p align="center">
+  <img src="https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge" alt="Portfolio Live">
+  <img src="https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?style=for-the-badge" alt="GitHub Pages">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+</p>
 
-Hello! I'm **Shubham Kulkarni**, a passionate and dedicated Jr. Software Developer currently undergoing intensive training at **Manasvi Tech Solutions** in Nashik, Maharashtra. This portfolio showcases my daily learning journey and progressive skill development in modern web technologies.
+<p align="center">
+  <b>Modern, Responsive, and Interactive Portfolio — Showcasing My Web Development Journey at Manasvi Tech Solutions</b>
+</p>
 
-## 🌟 Live Portfolio
+---
 
-🔗 **[View Live Portfolio](https://kulkarnishub377.github.io/sk/)**
+## � About Me
 
-## 📁 Project Structure
+Hi! I'm <b>Shubham Kulkarni</b>, a passionate <b>Jr. Software Developer</b> based in Nashik, Maharashtra. Currently, I'm undergoing intensive full-stack training at <b>Manasvi Tech Solutions</b>. This portfolio is a living record of my daily progress, hands-on projects, and the skills I’m mastering in modern web development.
 
+---
+
+## � Live Portfolio
+
+<p align="center">
+  <a href="https://kulkarnishub377.github.io/sk/" target="_blank"><img src="https://img.shields.io/badge/View%20Live-Portfolio-green?style=for-the-badge&logo=github" alt="View Live Portfolio"></a>
+</p>
+
+---
+
+## �️ Project Structure
+
+```text
+├── Index.html            # Main portfolio page
+├── README.md             # Project documentation
+└── project/              # Daily training projects
+    ├── day1_01_07.html      # Day 1: HTML Fundamentals
+    ├── day2_02_07.html      # Day 2: Lists, Tables & Forms
+    ├── day3_03_07.html      # Day 3: CSS & Flexbox
+    ├── day4_04_07.html      # Day 4: Advanced CSS
+    ├── day5_05_07.html      # Day 5: Bootstrap 5
+    └── Flexbox.html         # Advanced Flexbox Project
 ```
-├── Index.html          # Main portfolio page
-├── README.md           # Project documentation
-└── project/            # Daily training projects
-    ├── day1_01_07.html    # Day 1: HTML Fundamentals
-    ├── day2_02_07.html    # Day 2: Lists, Tables & Forms
-    ├── day3_03_07.html    # Day 3: CSS & Flexbox
-    ├── day4_04_07.html    # Day 4: Advanced CSS
-    ├── day5_05_07.html    # Day 5: Bootstrap 5
-    └── Flexbox.html       # Advanced Flexbox Project
+
+---
+
+## 🛠️ Tech Stack & Skills
+
+<details>
+<summary><b>Frontend</b></summary>
+
+- <b>HTML5</b> — Semantic, accessible, SEO-friendly markup
+- <b>CSS3</b> — Flexbox, Grid, custom properties, animations, responsive design
+- <b>Bootstrap 5</b> — Modern UI components, grid system, utilities
+- <b>JavaScript (ES6+)</b> — DOM manipulation, events, dynamic UI
+
+</details>
+
+<details>
+<summary><b>Tools & Workflow</b></summary>
+
+- <b>Git & GitHub</b> — Version control, collaboration, deployment
+- <b>GitHub Pages</b> — Free static site hosting
+- <b>VS Code</b> — My favorite code editor
+- <b>Mobile-First & Responsive Design</b>
+- <b>Cross-browser Compatibility</b>
+
+</details>
+
+---
+
+## ✨ Portfolio Highlights
+
+<details open>
+<summary><b>🎨 Modern Design</b></summary>
+
+- Glassmorphism UI & gradient backgrounds
+- Interactive animations & smooth transitions
+- Mobile-first, fully responsive layouts
+- Accessible & SEO-optimized
+
+</details>
+
+<details>
+<summary><b>🔧 Technical Features</b></summary>
+
+- Progressive enhancement (works without JS)
+- WCAG-compliant accessibility
+- Fast load times & performance optimized
+- Semantic markup & meta tags
+
+</details>
+
+<details>
+<summary><b>📱 Device Support</b></summary>
+
+- Mobile, tablet, and desktop friendly
+- Cross-browser tested (Chrome, Firefox, Edge, Safari)
+
+</details>
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/kulkarnishub377/sk.git
+cd sk
+
+# 2. Open in your browser
+# Just open Index.html, or use a local server:
+python -m http.server 8000
+# Visit http://localhost:8000
+
+# 3. Deploy to GitHub Pages
+# Push to main branch — auto deploys!
+# https://kulkarnishub377.github.io/sk/
 ```
 
-## 📚 Training Progress
+---
 
-### 🎯 Daily Learning Journey
+## 📊 Performance & Metrics
 
-| Day | Date | Topic | Key Learnings | Status |
-|-----|------|-------|---------------|--------|
-| **Day 1** | July 1, 2024 | HTML Fundamentals & Text Formatting | Semantic markup, headings, text formatting, links, iframes | ✅ Complete |
-| **Day 2** | July 2, 2024 | Lists, Tables & Form Elements | HTML lists, data tables, form creation, input types | ✅ Complete |
-| **Day 3** | July 3, 2024 | CSS Box Model & Flexbox Basics | CSS selectors, box model, flexbox fundamentals | ✅ Complete |
-| **Day 4** | July 4, 2024 | Advanced CSS & Modern Features | CSS variables, positioning, animations, media queries | ✅ Complete |
-| **Day 5** | July 5, 2024 | Bootstrap 5 Framework Mastery | Grid system, components, responsive design | ✅ Complete |
-| **Advanced** | Ongoing | Interactive Flexbox Playground | Advanced flexbox, JavaScript integration | 🔄 In Progress |
+- <b>Lighthouse Score:</b> 95+ (Performance, Accessibility, Best Practices, SEO)
+- <b>Mobile Friendly:</b> ✅ Google Mobile-Friendly Test
+- <b>Load Time:</b> < 2 seconds
+- <b>Responsive:</b> ✅ All device sizes
+- <b>Browsers:</b> Chrome, Firefox, Safari, Edge
 
-## 🛠️ Technologies & Skills
+---
 
-### Frontend Technologies
-- **HTML5** - Semantic markup, accessibility, modern HTML features
-- **CSS3** - Flexbox, Grid, animations, custom properties, responsive design
-- **Bootstrap 5** - Component library, grid system, utilities
-- **JavaScript ES6+** - Modern JavaScript, DOM manipulation, event handling
+## � Learning Journey
 
-### Tools & Frameworks
-- **Git** - Version control
-- **GitHub Pages** - Deployment platform
-- **Responsive Design** - Mobile-first approach
-- **Cross-browser Compatibility** - Ensuring consistent experience
+<details open>
+<summary><b>✅ Completed</b></summary>
 
-## ✨ Portfolio Features
+- [x] HTML5 semantic structure
+- [x] CSS3 styling & layout
+- [x] Flexbox & responsive design
+- [x] Bootstrap 5 components
+- [x] Modern dev practices
 
-### 🎨 Modern Design
-- **Glassmorphism UI** - Modern translucent design elements
-- **Gradient Backgrounds** - Beautiful color schemes
-- **Interactive Animations** - Smooth transitions and hover effects
-- **Responsive Layout** - Mobile-first, works on all devices
+</details>
 
-### 🔧 Technical Features
-- **Progressive Enhancement** - Works without JavaScript
-- **Accessibility** - WCAG compliant design
-- **Performance Optimized** - Fast loading times
-- **SEO Friendly** - Proper meta tags and semantic markup
+<details>
+<summary><b>🔄 In Progress</b></summary>
 
-### 📱 Responsive Design
-- **Mobile First** - Optimized for mobile devices
-- **Tablet Friendly** - Perfect display on tablets
-- **Desktop Enhanced** - Full features on desktop
-- **Cross-browser** - Works on all modern browsers
-
-## 🚀 Getting Started
-
-### For Development
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kulkarnishub377/sk.git
-   cd sk
-   ```
-
-2. **Open in browser**
-   ```bash
-   # Simply open Index.html in your web browser
-   # Or use a local server for development
-   python -m http.server 8000
-   # Then visit http://localhost:8000
-   ```
-
-3. **For GitHub Pages deployment**
-   - Push changes to the `main` branch
-   - GitHub Pages will automatically deploy
-   - Visit: `https://kulkarnishub377.github.io/sk/`
-
-## 📊 Performance Metrics
-
-- **Lighthouse Score**: 95+ Performance
-- **Mobile Friendly**: ✅ Google Mobile-Friendly Test
-- **Cross-browser**: ✅ Chrome, Firefox, Safari, Edge
-- **Load Time**: < 2 seconds
-- **Responsive**: ✅ All device sizes
-
-## 🎓 Learning Objectives
-
-### ✅ Completed
-- [x] HTML5 semantic elements and structure
-- [x] CSS3 styling and layout techniques
-- [x] Flexbox and responsive design
-- [x] Bootstrap 5 framework implementation
-- [x] Modern development practices
-
-### 🔄 In Progress
-- [ ] Advanced JavaScript ES6+
-- [ ] DOM manipulation and event handling
+- [ ] Advanced JavaScript (ES6+)
+- [ ] DOM manipulation & events
 - [ ] API integration
-- [ ] Version control with Git
-- [ ] Modern development workflow
+- [ ] Git version control
+- [ ] Modern workflow
 
-### 🎯 Future Goals
+</details>
+
+<details>
+<summary><b>🎯 Future Goals</b></summary>
+
 - [ ] React.js development
-- [ ] Node.js backend development
-- [ ] PHP development
+- [ ] Node.js backend
+- [ ] PHP & server-side scripting
 - [ ] Database management (MySQL/MongoDB)
-- [ ] Full-stack application development
+- [ ] Full-stack app development
 - [ ] Cloud deployment (AWS/Vercel)
 
-## 📞 Contact Information
+</details>
 
-- **📧 Email**: [shubhamkulkarni377@gmail.com](mailto:shubhamkulkarni377@gmail.com)
-- **🐙 GitHub**: [@kulkarnishub377](https://github.com/kulkarnishub377)
-- **💼 LinkedIn**: Shubham Kulkarni
-- **🏢 Training at**: Manasvi Tech Solutions, Nashik
-- **📍 Location**: Nashik, Maharashtra, India
+---
 
-## 🏢 Training Institution
+## 📞 Contact
 
-**Manasvi Tech Solutions**
-- 📍 Location: Nashik, Maharashtra
-- 🎯 Focus: Full-Stack Web Development
-- 📅 Duration: July 2024 - Ongoing
-- 🎓 Program: Intensive Web Development Training
+<p>
+  <b>Email:</b> <a href="mailto:shubhamkulkarni377@gmail.com">shubhamkulkarni377@gmail.com</a><br>
+  <b>GitHub:</b> <a href="https://github.com/kulkarnishub377">@kulkarnishub377</a><br>
+  <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shubham-kulkarni-377/">Shubham Kulkarni</a><br>
+  <b>Training at:</b> Manasvi Tech Solutions, Nashik<br>
+  <b>Location:</b> Nashik, Maharashtra, India
+</p>
+
+---
+
+## 🏢 About Manasvi Tech Solutions
+
+<b>Manasvi Tech Solutions</b> — Nashik, Maharashtra<br>
+<b>Focus:</b> Full-Stack Web Development<br>
+<b>Duration:</b> July 2024 – Ongoing<br>
+<b>Program:</b> Intensive Web Development Training
+
+---
 
 ## 🤝 Contributing
 
-While this is a personal portfolio, I welcome feedback and suggestions!
+<details>
+<summary>How to contribute</summary>
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/improvement`)
-3. **Commit your changes** (`git commit -am 'Add some improvement'`)
-4. **Push to the branch** (`git push origin feature/improvement`)
-5. **Create a Pull Request**
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Commit your changes (`git commit -am 'Add some improvement'`)
+4. Push to your branch (`git push origin feature/improvement`)
+5. Create a Pull Request
+
+</details>
+
+---
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
+---
+
 ## 🙏 Acknowledgments
 
-- **Manasvi Tech Solutions** - For providing excellent training and guidance
-- **Bootstrap Team** - For the amazing CSS framework
-- **Bootstrap Icons** - For the comprehensive icon library
-- **GitHub** - For free hosting via GitHub Pages
-
-## 📈 Project Stats
-
-![GitHub repo size](https://img.shields.io/github/repo-size/kulkarnishub377/sk)
-![GitHub last commit](https://img.shields.io/github/last-commit/kulkarnishub377/sk)
-![GitHub stars](https://img.shields.io/github/stars/kulkarnishub377/sk)
-![GitHub forks](https://img.shields.io/github/forks/kulkarnishub377/sk)
+- <b>Manasvi Tech Solutions</b> — Training & mentorship
+- <b>Bootstrap Team</b> — CSS framework
+- <b>Bootstrap Icons</b> — Icon library
+- <b>GitHub</b> — Free hosting via GitHub Pages
 
 ---
 
-### 💻 Built with ❤️ by [Shubham Kulkarni](https://github.com/kulkarnishub377)
+## 📈 Project Stats
 
-> "Building the future, one line of code at a time." 
+<p align="center">
+  <img src="https://img.shields.io/github/repo-size/kulkarnishub377/sk?style=for-the-badge" alt="Repo Size">
+  <img src="https://img.shields.io/github/last-commit/kulkarnishub377/sk?style=for-the-badge" alt="Last Commit">
+  <img src="https://img.shields.io/github/stars/kulkarnishub377/sk?style=for-the-badge" alt="Stars">
+  <img src="https://img.shields.io/github/forks/kulkarnishub377/sk?style=for-the-badge" alt="Forks">
+</p>
 
-**🚀 [View Live Portfolio](https://kulkarnishub377.github.io/sk/) | 📧 [Get in Touch](mailto:shubhamkulkarni377@gmail.com)**
+---
+
+<p align="center">
+  <b>💻 Built with ❤️ by <a href="https://github.com/kulkarnishub377">Shubham Kulkarni</a></b><br>
+  <i>"Building the future, one line of code at a time."</i><br>
+  <a href="https://kulkarnishub377.github.io/sk/" target="_blank"><b>� View Live Portfolio</b></a> | <a href="mailto:shubhamkulkarni377@gmail.com"><b>📧 Get in Touch</b></a>
+</p>
