@@ -1,14 +1,14 @@
-
 # 🚀 Shubham Kulkarni — Jr. Software Developer Portfolio
 
 <p align="center">
-   <img src="https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge" alt="Portfolio Live">
-   <img src="https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?style=for-the-badge" alt="GitHub Pages">
+   <a href="https://kulkarnishub377.github.io/sk/" target="_blank">
+      <img src="https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge&logo=github" alt="Portfolio Live">
+   </a>
+   <img src="https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue?style=for-the-badge&logo=githubpages&logoColor=white" alt="GitHub Pages">
    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-   <img src="https://img.shields.io/badge/TechStrak-232F3E?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iNSIgZmlsbD0iIzIzMmYzZSIvPjx0ZXh0IHg9IjE1IiB5PSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+VFM8L3RleHQ+PC9zdmc+" alt="TechStrak" title="TechStrak" height="28">
    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
    <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js">
@@ -16,10 +16,11 @@
    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-   <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code">
+   <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code">
    <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
-   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
+   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS">
    <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
+   <img src="https://img.shields.io/badge/TechStrak-232F3E?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iNSIgZmlsbD0iIzIzMmYzZSIvPjx0ZXh0IHg9IjE1IiB5PSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+VFM8L3RleHQ+PC9zdmc+" alt="TechStrak" title="TechStrak" height="28">
 </p>
 
 <p align="center">
@@ -38,7 +39,9 @@ Hi! I'm <b>Shubham Kulkarni</b>, a passionate <b>Jr. Software Developer</b> from
 ## 🌟 Live Portfolio
 
 <p align="center">
-   <a href="https://kulkarnishub377.github.io/sk/" target="_blank"><img src="https://img.shields.io/badge/View%20Live-Portfolio-green?style=for-the-badge&logo=github" alt="View Live Portfolio"></a>
+   <a href="https://kulkarnishub377.github.io/sk/" target="_blank">
+      <img src="https://img.shields.io/badge/View%20Live-Portfolio-green?style=for-the-badge&logo=github" alt="View Live Portfolio">
+   </a>
 </p>
 
 ---
@@ -48,26 +51,26 @@ Hi! I'm <b>Shubham Kulkarni</b>, a passionate <b>Jr. Software Developer</b> from
 <details open>
 <summary><b>Frontend</b></summary>
 
-- <b>HTML5</b> — Semantic, accessible, SEO-friendly markup
-- <b>CSS3</b> — Flexbox, Grid, custom properties, advanced animations, responsive design
-- <b>Bootstrap 5</b> — Modern UI components, grid system, utilities
-- <b>JavaScript (ES6+)</b> — DOM manipulation, events, dynamic UI, ES modules
-- <b>React.js</b> — Component-based architecture, hooks, SPA development
-- <b>Figma</b> — UI/UX prototyping and design
-- <b>TechStrak</b> — Analytics & deployment (demo integration)
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" alt="HTML5"> <b>HTML5</b> — Semantic, accessible, SEO-friendly markup
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="20" alt="CSS3"> <b>CSS3</b> — Flexbox, Grid, custom properties, advanced animations, responsive design
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="20" alt="Bootstrap"> <b>Bootstrap 5</b> — Modern UI components, grid system, utilities
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20" alt="JavaScript"> <b>JavaScript (ES6+)</b> — DOM manipulation, events, dynamic UI, ES modules
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="20" alt="React"> <b>React.js</b> — Component-based architecture, hooks, SPA development
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="20" alt="Figma"> <b>Figma</b> — UI/UX prototyping and design
+- <img src="https://img.shields.io/badge/TechStrak-232F3E?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iNSIgZmlsbD0iIzIzMmYzZSIvPjx0ZXh0IHg9IjE1IiB5PSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+VFM8L3RleHQ+PC9zdmc+" width="20" alt="TechStrak"> <b>TechStrak</b> — Analytics & deployment (demo integration)
 
 </details>
 
 <details open>
 <summary><b>Backend & Tools</b></summary>
 
-- <b>Node.js</b> — Server-side JavaScript, REST APIs
-- <b>Express.js</b> — Backend framework for APIs
-- <b>MongoDB & MySQL</b> — NoSQL & SQL database management
-- <b>Git & GitHub</b> — Version control, collaboration, CI/CD
-- <b>GitHub Pages & Vercel</b> — Static & dynamic site deployment
-- <b>AWS</b> — Cloud deployment (basics)
-- <b>VS Code</b> — My favorite code editor
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="20" alt="Node.js"> <b>Node.js</b> — Server-side JavaScript, REST APIs
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="20" alt="Express.js"> <b>Express.js</b> — Backend framework for APIs
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="20" alt="MongoDB"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="20" alt="MySQL"> <b>MongoDB & MySQL</b> — NoSQL & SQL database management
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="20" alt="Git"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20" alt="GitHub"> <b>Git & GitHub</b> — Version control, collaboration, CI/CD
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20" alt="GitHub Pages"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="20" alt="Vercel"> <b>GitHub Pages & Vercel</b> — Static & dynamic site deployment
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" width="20" alt="AWS"> <b>AWS</b> — Cloud deployment (basics)
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="20" alt="VS Code"> <b>VS Code</b> — My favorite code editor
 - <b>REST APIs</b> — Integration & data fetching
 - <b>Mobile-First & Responsive Design</b>
 - <b>Cross-browser Compatibility</b>
@@ -117,25 +120,6 @@ Hi! I'm <b>Shubham Kulkarni</b>, a passionate <b>Jr. Software Developer</b> from
 
 ---
 
-## 🚀 Quick Start
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/kulkarnishub377/sk.git
-cd sk
-
-# 2. Open in your browser
-# Just open Index.html, or use a local server:
-python -m http.server 8000
-# Visit http://localhost:8000
-
-# 3. Deploy to GitHub Pages or Vercel
-# Push to main branch — auto deploys!
-# https://kulkarnishub377.github.io/sk/
-```
-
----
-
 ## 📊 Performance & Metrics
 
 - <b>Lighthouse Score:</b> 95+ (Performance, Accessibility, Best Practices, SEO)
@@ -148,61 +132,15 @@ python -m http.server 8000
 
 ---
 
-## 🎯 Learning Journey
-
-<details open>
-<summary><b>✅ Completed</b></summary>
-
-- [x] HTML5 semantic structure
-- [x] CSS3 styling & layout
-- [x] Flexbox & responsive design
-- [x] Bootstrap 5 components
-- [x] Modern dev practices
-- [x] Git & GitHub workflow
-- [x] Figma UI/UX design basics
-
-</details>
-
-<details open>
-<summary><b>🔄 In Progress</b></summary>
-
-- [ ] Advanced JavaScript (ES6+)
-- [ ] DOM manipulation & events
-- [ ] API integration (RESTful)
-- [ ] TechStrak analytics & deployment
-- [ ] React.js (SPA, hooks, context)
-- [ ] Node.js & Express.js backend
-- [ ] MongoDB & MySQL basics
-- [ ] Modern workflow & automation
-
-</details>
-
-<details open>
-<summary><b>🎯 Future Goals</b></summary>
-
-- [ ] Advanced React.js (Redux, Next.js)
-- [ ] Node.js backend (REST APIs, authentication)
-- [ ] PHP & server-side scripting
-- [ ] Database management (MySQL/MongoDB)
-- [ ] Full-stack app development
-- [ ] Cloud deployment (AWS/Vercel)
-- [ ] Advanced DevOps & CI/CD
-- [ ] PWA & offline-first apps
-- [ ] TypeScript adoption
-
-</details>
-
----
-
 ## 📞 Contact
 
 <p>
-   <b>Email:</b> <a href="mailto:shubhamkulkarni377@gmail.com">shubhamkulkarni377@gmail.com</a><br>
-   <b>GitHub:</b> <a href="https://github.com/kulkarnishub377">@kulkarnishub377</a><br>
-   <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shubham-kulkarni-377/">Shubham Kulkarni</a><br>
-   <b>Training at:</b> Manasvi Tech Solutions, Nashik<br>
-   <b>Location:</b> Nashik, Maharashtra, India<br>
-   <b>TechStrak Demo:</b> <a href="https://techstrak.com/" target="_blank">techstrak.com</a>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" width="18" alt="Email"> <b>Email:</b> <a href="mailto:shubhamkulkarni377@gmail.com">shubhamkulkarni377@gmail.com</a><br>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="18" alt="GitHub"> <b>GitHub:</b> <a href="https://github.com/kulkarnishub377">@kulkarnishub377</a><br>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="18" alt="LinkedIn"> <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shubham-kulkarni-377/">Shubham Kulkarni</a><br>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" width="18" alt="Manasvi Tech Solutions"> <b>Training at:</b> Manasvi Tech Solutions, Nashik<br>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlemaps/googlemaps-original.svg" width="18" alt="Location"> <b>Location:</b> Nashik, Maharashtra, India<br>
+   <img src="https://img.shields.io/badge/TechStrak-232F3E?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iNSIgZmlsbD0iIzIzMmYzZSIvPjx0ZXh0IHg9IjE1IiB5PSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+VFM8L3RleHQ+PC9zdmc+" width="18" alt="TechStrak"> <b>TechStrak Demo:</b> <a href="https://techstrak.com/" target="_blank">techstrak.com</a>
 </p>
 
 ---
@@ -239,12 +177,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- <b>Manasvi Tech Solutions</b> — Training & mentorship
-- <b>Bootstrap Team</b> — CSS framework
-- <b>Bootstrap Icons</b> — Icon library
-- <b>GitHub</b> — Free hosting via GitHub Pages
-- <b>TechStrak</b> — Analytics & deployment inspiration
-- <b>Figma</b> — UI/UX design inspiration
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" width="18" alt="Manasvi Tech Solutions"> <b>Manasvi Tech Solutions</b> — Training & mentorship
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="18" alt="Bootstrap"> <b>Bootstrap Team</b> — CSS framework
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="18" alt="Bootstrap Icons"> <b>Bootstrap Icons</b> — Icon library
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="18" alt="GitHub"> <b>GitHub</b> — Free hosting via GitHub Pages
+- <img src="https://img.shields.io/badge/TechStrak-232F3E?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iNSIgZmlsbD0iIzIzMmYzZSIvPjx0ZXh0IHg9IjE1IiB5PSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+VFM8L3RleHQ+PC9zdmc+" width="18" alt="TechStrak"> <b>TechStrak</b> — Analytics & deployment inspiration
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="18" alt="Figma"> <b>Figma</b> — UI/UX design inspiration
 - <b>Open Source Community</b> — Learning resources
 
 ---
@@ -252,12 +190,12 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📈 Project Stats
 
 <p align="center">
-   <img src="https://img.shields.io/github/repo-size/kulkarnishub377/sk?style=for-the-badge" alt="Repo Size">
-   <img src="https://img.shields.io/github/last-commit/kulkarnishub377/sk?style=for-the-badge" alt="Last Commit">
-   <img src="https://img.shields.io/github/stars/kulkarnishub377/sk?style=for-the-badge" alt="Stars">
-   <img src="https://img.shields.io/github/forks/kulkarnishub377/sk?style=for-the-badge" alt="Forks">
-   <img src="https://img.shields.io/github/issues/kulkarnishub377/sk?style=for-the-badge" alt="Issues">
-   <img src="https://img.shields.io/github/contributors/kulkarnishub377/sk?style=for-the-badge" alt="Contributors">
+   <img src="https://img.shields.io/github/repo-size/kulkarnishub377/sk?style=for-the-badge&logo=github" alt="Repo Size">
+   <img src="https://img.shields.io/github/last-commit/kulkarnishub377/sk?style=for-the-badge&logo=github" alt="Last Commit">
+   <img src="https://img.shields.io/github/stars/kulkarnishub377/sk?style=for-the-badge&logo=github" alt="Stars">
+   <img src="https://img.shields.io/github/forks/kulkarnishub377/sk?style=for-the-badge&logo=github" alt="Forks">
+   <img src="https://img.shields.io/github/issues/kulkarnishub377/sk?style=for-the-badge&logo=github" alt="Issues">
+   <img src="https://img.shields.io/github/contributors/kulkarnishub377/sk?style=for-the-badge&logo=github" alt="Contributors">
 </p>
 
 ---
@@ -267,4 +205,3 @@ This project is open source and available under the [MIT License](LICENSE).
    <i>"Building the future, one line of code at a time."</i><br>
    <a href="https://kulkarnishub377.github.io/sk/" target="_blank"><b>🚀 View Live Portfolio</b></a> | <a href="mailto:shubhamkulkarni377@gmail.com"><b>📧 Get in Touch</b></a>
 </p>
-
