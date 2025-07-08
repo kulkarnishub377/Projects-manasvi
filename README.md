@@ -138,9 +138,8 @@ Hi! I'm <b>Shubham Kulkarni</b>, a passionate <b>Jr. Software Developer</b> from
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" width="18" alt="Email"> <b>Email:</b> <a href="mailto:shubhamkulkarni377@gmail.com">shubhamkulkarni377@gmail.com</a><br>
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="18" alt="GitHub"> <b>GitHub:</b> <a href="https://github.com/kulkarnishub377">@kulkarnishub377</a><br>
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="18" alt="LinkedIn"> <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shubham-kulkarni-377/">Shubham Kulkarni</a><br>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" width="18" alt="Manasvi Tech Solutions"> <b>Training at:</b> Manasvi Tech Solutions, Nashik<br>
+  <b>Training at:</b> Manasvi Tech Solutions, Nashik<br>
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlemaps/googlemaps-original.svg" width="18" alt="Location"> <b>Location:</b> Nashik, Maharashtra, India<br>
-   <img src="https://img.shields.io/badge/TechStrak-232F3E?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiByeD0iNSIgZmlsbD0iIzIzMmYzZSIvPjx0ZXh0IHg9IjE1IiB5PSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2ZmZiI+VFM8L3RleHQ+PC9zdmc+" width="18" alt="TechStrak"> <b>TechStrak Demo:</b> <a href="https://techstrak.com/" target="_blank">techstrak.com</a>
 </p>
 
 ---
